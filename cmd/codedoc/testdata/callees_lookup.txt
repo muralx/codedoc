@@ -1,0 +1,5 @@
+go-lib@0b29eeb
+== callees of Service.Lookup (2)
+service/service.go
+  Store.Get  :18  v, err := svc.s.Get(key)
+  fallback  :20  return fallback(key)

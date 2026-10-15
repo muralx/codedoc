@@ -1,0 +1,35 @@
+{
+  "Format": "hcl",
+  "Defs": [
+    {
+      "Key": "var.region",
+      "Line": 1,
+      "Preview": "\"us-east-1\""
+    },
+    {
+      "Key": "local.zone",
+      "Line": 6,
+      "Preview": "\"${var.region}a\""
+    },
+    {
+      "Key": "aws_instance.web.ami",
+      "Line": 10,
+      "Preview": "\"ami-123456\""
+    },
+    {
+      "Key": "aws_instance.web.availability_zone",
+      "Line": 11,
+      "Preview": "local.zone"
+    }
+  ],
+  "Refs": [
+    {
+      "Key": "var.region",
+      "Line": 6
+    },
+    {
+      "Key": "local.zone",
+      "Line": 11
+    }
+  ]
+}

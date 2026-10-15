@@ -1,0 +1,15 @@
+deps-app@2570b72 deps-go@fc1219f
+@acme/sdk@1.2.0  <deps-app>/node_modules/@acme/sdk  Client and server building blocks for the Acme protocol.
+== @acme/sdk (1)
+PROTOCOL_VERSION  const
+== @acme/sdk/server (1)
+Server  class
+== @acme/sdk/shared/protocol.js (1)
+Protocol  class
+== modules of @acme/sdk (6)
+@acme/sdk  1 name
+@acme/sdk/locales/en.js  1 name
+@acme/sdk/server  1 name
+@acme/sdk/server/transport.js  1 name
+@acme/sdk/shared/protocol.js  1 name
+@acme/sdk/types.js  2 names

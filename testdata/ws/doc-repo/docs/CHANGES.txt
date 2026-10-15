@@ -1,0 +1,6 @@
+Changes
+
+0.2: the store rejects empty keys.
+0.1: first release.
+
+# plain text has no headings

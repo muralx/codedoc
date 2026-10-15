@@ -1,0 +1,20 @@
+# Fixture workspace for manual smoke tests; repo paths are relative to
+# this file.
+workspaces:
+  fixture:
+    repos:
+      - path: go-lib
+      - path: go-app
+      - path: ts-domain
+      - path: ts-app
+      - path: py-lib
+      - path: java-lib
+      - path: cfg-repo
+      - path: doc-repo
+  # The repos that depend on third-party packages (deps spec section 11):
+  # a fake node_modules, and a fake Go module cache selected with
+  # CODEDOC_GOMODCACHE=<this directory>/gomodcache.
+  fixture-deps:
+    repos:
+      - path: deps-app
+      - path: deps-go

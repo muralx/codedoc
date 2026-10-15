@@ -1,0 +1,19 @@
+go-lib@0b29eeb
+Store  store/store.go:10-15  type Store interface  Store persists string values by key.
+== references (2)
+service/service.go
+  Service.s  :11  type Service struct{ s store.Store }
+  New  :14  func New(s store.Store) *Service { return &Service{s: s} }
+== implementations (2)
+NullStore  store/null.go:4  type NullStore struct{}
+MemStore  store/store.go:18  type MemStore struct {
+== mentions in documents and doc comments (6)
+service/service.go
+  Service  :10  // Service answers lookups through a Store.
+  New  :13  // New wires a Service to a Store.
+NullStore  store/null.go:3  // NullStore is a Store that keeps nothing.
+store/store.go
+  MemStore  :17  // MemStore is an in-memory Store.
+  MemStore.Get  :25  // Get implements Store.
+  MemStore.Put  :34  // Put implements Store.
+exported  yes  no other repo of the workspace uses it

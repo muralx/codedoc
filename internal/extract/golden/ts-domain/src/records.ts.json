@@ -1,0 +1,426 @@
+{
+  "Symbols": [
+    {
+      "Kind": "interface",
+      "Name": "Environment",
+      "Qualified": "src/records.ts/Environment",
+      "Container": "",
+      "Span": {
+        "StartByte": 36,
+        "EndByte": 102,
+        "StartLine": 2,
+        "EndLine": 5
+      },
+      "Signature": {
+        "StartByte": 36,
+        "EndByte": 64,
+        "StartLine": 2,
+        "EndLine": 2
+      },
+      "SigText": "export interface Environment",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "e4783b307a96319a",
+      "Doc": {
+        "Text": "A record with a health flag.",
+        "Span": {
+          "StartByte": 0,
+          "EndByte": 35,
+          "StartLine": 1,
+          "EndLine": 1
+        }
+      }
+    },
+    {
+      "Kind": "field",
+      "Name": "name",
+      "Qualified": "src/records.ts/Environment.name",
+      "Container": "src/records.ts/Environment",
+      "Span": {
+        "StartByte": 69,
+        "EndByte": 81,
+        "StartLine": 3,
+        "EndLine": 3
+      },
+      "Signature": {
+        "StartByte": 69,
+        "EndByte": 81,
+        "StartLine": 3,
+        "EndLine": 3
+      },
+      "SigText": "name: string",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "2b7725c324414504",
+      "Doc": null
+    },
+    {
+      "Kind": "field",
+      "Name": "health",
+      "Qualified": "src/records.ts/Environment.health",
+      "Container": "src/records.ts/Environment",
+      "Span": {
+        "StartByte": 85,
+        "EndByte": 99,
+        "StartLine": 4,
+        "EndLine": 4
+      },
+      "Signature": {
+        "StartByte": 85,
+        "EndByte": 99,
+        "StartLine": 4,
+        "EndLine": 4
+      },
+      "SigText": "health: Health",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "43944af4347d56e6",
+      "Doc": null
+    },
+    {
+      "Kind": "type",
+      "Name": "Health",
+      "Qualified": "src/records.ts/Health",
+      "Container": "",
+      "Span": {
+        "StartByte": 152,
+        "EndByte": 191,
+        "StartLine": 8,
+        "EndLine": 8
+      },
+      "Signature": {
+        "StartByte": 152,
+        "EndByte": 191,
+        "StartLine": 8,
+        "EndLine": 8
+      },
+      "SigText": "export type Health = 'ok' | 'degraded';",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "d29e3be2938d8779",
+      "Doc": {
+        "Text": "Health states an environment can report.",
+        "Span": {
+          "StartByte": 104,
+          "EndByte": 151,
+          "StartLine": 7,
+          "EndLine": 7
+        }
+      }
+    },
+    {
+      "Kind": "interface",
+      "Name": "EnvironmentRepo",
+      "Qualified": "src/records.ts/EnvironmentRepo",
+      "Container": "",
+      "Span": {
+        "StartByte": 228,
+        "EndByte": 351,
+        "StartLine": 11,
+        "EndLine": 14
+      },
+      "Signature": {
+        "StartByte": 228,
+        "EndByte": 260,
+        "StartLine": 11,
+        "EndLine": 11
+      },
+      "SigText": "export interface EnvironmentRepo",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "986a0526cc603ea9",
+      "Doc": {
+        "Text": "Repository of environments.",
+        "Span": {
+          "StartByte": 193,
+          "EndByte": 227,
+          "StartLine": 10,
+          "EndLine": 10
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "load",
+      "Qualified": "src/records.ts/EnvironmentRepo.load",
+      "Container": "src/records.ts/EnvironmentRepo",
+      "Span": {
+        "StartByte": 305,
+        "EndByte": 348,
+        "StartLine": 13,
+        "EndLine": 13
+      },
+      "Signature": {
+        "StartByte": 305,
+        "EndByte": 348,
+        "StartLine": 13,
+        "EndLine": 13
+      },
+      "SigText": "load(name: string): Environment | undefined",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "f53f5e12a1a65392",
+      "Doc": {
+        "Text": "Loads one environment by name.",
+        "Span": {
+          "StartByte": 265,
+          "EndByte": 302,
+          "StartLine": 12,
+          "EndLine": 12
+        }
+      }
+    },
+    {
+      "Kind": "class",
+      "Name": "MemoryRepo",
+      "Qualified": "src/records.ts/MemoryRepo",
+      "Container": "",
+      "Span": {
+        "StartByte": 387,
+        "EndByte": 680,
+        "StartLine": 17,
+        "EndLine": 26
+      },
+      "Signature": {
+        "StartByte": 387,
+        "EndByte": 437,
+        "StartLine": 17,
+        "EndLine": 17
+      },
+      "SigText": "export class MemoryRepo implements EnvironmentRepo",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "956b30f422fbc49a",
+      "Doc": {
+        "Text": "In-memory EnvironmentRepo.",
+        "Span": {
+          "StartByte": 353,
+          "EndByte": 386,
+          "StartLine": 16,
+          "EndLine": 16
+        }
+      }
+    },
+    {
+      "Kind": "field",
+      "Name": "items",
+      "Qualified": "src/records.ts/MemoryRepo.items",
+      "Container": "src/records.ts/MemoryRepo",
+      "Span": {
+        "StartByte": 442,
+        "EndByte": 488,
+        "StartLine": 18,
+        "EndLine": 18
+      },
+      "Signature": {
+        "StartByte": 442,
+        "EndByte": 488,
+        "StartLine": 18,
+        "EndLine": 18
+      },
+      "SigText": "private items = new Map\u003cstring, Environment\u003e()",
+      "Visibility": "private",
+      "IsTest": false,
+      "BodyHash": "79dace548fa65eae",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "load",
+      "Qualified": "src/records.ts/MemoryRepo.load",
+      "Container": "src/records.ts/MemoryRepo",
+      "Span": {
+        "StartByte": 492,
+        "EndByte": 574,
+        "StartLine": 19,
+        "EndLine": 21
+      },
+      "Signature": {
+        "StartByte": 492,
+        "EndByte": 535,
+        "StartLine": 19,
+        "EndLine": 19
+      },
+      "SigText": "load(name: string): Environment | undefined",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "7cb9841a5169c941",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "save",
+      "Qualified": "src/records.ts/MemoryRepo.save",
+      "Container": "src/records.ts/MemoryRepo",
+      "Span": {
+        "StartByte": 609,
+        "EndByte": 678,
+        "StartLine": 23,
+        "EndLine": 25
+      },
+      "Signature": {
+        "StartByte": 609,
+        "EndByte": 637,
+        "StartLine": 23,
+        "EndLine": 23
+      },
+      "SigText": "save(env: Environment): void",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "ecec39c9d70812b1",
+      "Doc": {
+        "Text": "Stores an environment.",
+        "Span": {
+          "StartByte": 577,
+          "EndByte": 606,
+          "StartLine": 22,
+          "EndLine": 22
+        }
+      }
+    },
+    {
+      "Kind": "function",
+      "Name": "isHealthy",
+      "Qualified": "src/records.ts/isHealthy",
+      "Container": "",
+      "Span": {
+        "StartByte": 682,
+        "EndByte": 768,
+        "StartLine": 28,
+        "EndLine": 30
+      },
+      "Signature": {
+        "StartByte": 682,
+        "EndByte": 734,
+        "StartLine": 28,
+        "EndLine": 28
+      },
+      "SigText": "export function isHealthy(env: Environment): boolean",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "bd038e8fc09a3680",
+      "Doc": null
+    },
+    {
+      "Kind": "function",
+      "Name": "apiUrl",
+      "Qualified": "src/records.ts/apiUrl",
+      "Container": "",
+      "Span": {
+        "StartByte": 770,
+        "EndByte": 818,
+        "StartLine": 32,
+        "EndLine": 32
+      },
+      "Signature": {
+        "StartByte": 770,
+        "EndByte": 797,
+        "StartLine": 32,
+        "EndLine": 32
+      },
+      "SigText": "export const apiUrl = () =\u003e",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "f5937862762f89f9",
+      "Doc": null
+    }
+  ],
+  "References": [
+    {
+      "Kind": "type",
+      "Name": "Health",
+      "Qualifier": "",
+      "Enclosing": "src/records.ts/Environment.health",
+      "Line": 4,
+      "Col": 10,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "Environment",
+      "Qualifier": "",
+      "Enclosing": "src/records.ts/EnvironmentRepo.load",
+      "Line": 13,
+      "Col": 22,
+      "Arity": -1
+    },
+    {
+      "Kind": "implement",
+      "Name": "EnvironmentRepo",
+      "Qualifier": "",
+      "Enclosing": "src/records.ts/MemoryRepo",
+      "Line": 17,
+      "Col": 35,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "Environment",
+      "Qualifier": "",
+      "Enclosing": "src/records.ts/MemoryRepo.items",
+      "Line": 18,
+      "Col": 34,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "Environment",
+      "Qualifier": "",
+      "Enclosing": "src/records.ts/MemoryRepo.load",
+      "Line": 19,
+      "Col": 22,
+      "Arity": -1
+    },
+    {
+      "Kind": "call",
+      "Name": "get",
+      "Qualifier": "this.items",
+      "Enclosing": "src/records.ts/MemoryRepo.load",
+      "Line": 20,
+      "Col": 22,
+      "Arity": 1,
+      "RecvType": "-"
+    },
+    {
+      "Kind": "type",
+      "Name": "Environment",
+      "Qualifier": "",
+      "Enclosing": "src/records.ts/MemoryRepo.save",
+      "Line": 23,
+      "Col": 12,
+      "Arity": -1
+    },
+    {
+      "Kind": "call",
+      "Name": "set",
+      "Qualifier": "this.items",
+      "Enclosing": "src/records.ts/MemoryRepo.save",
+      "Line": 24,
+      "Col": 15,
+      "Arity": 2,
+      "RecvType": "-"
+    },
+    {
+      "Kind": "type",
+      "Name": "Environment",
+      "Qualifier": "",
+      "Enclosing": "src/records.ts/isHealthy",
+      "Line": 28,
+      "Col": 31,
+      "Arity": -1
+    },
+    {
+      "Kind": "config",
+      "Name": "API_URL",
+      "Qualifier": "accessor",
+      "Enclosing": "src/records.ts/apiUrl",
+      "Line": 32,
+      "Col": 40,
+      "Arity": -1
+    }
+  ],
+  "Imports": null,
+  "ModuleDoc": null,
+  "ModuleName": "",
+  "ParseErrors": 0
+}

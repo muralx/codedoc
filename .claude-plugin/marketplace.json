@@ -1,0 +1,19 @@
+{
+  "name": "codedoc",
+  "description": "Marketplace for the codedoc Claude Code plugin.",
+  "owner": {
+    "name": "muralx"
+  },
+  "plugins": [
+    {
+      "name": "codedoc",
+      "description": "Code knowledge index skills and MCP server for codedoc.",
+      "version": "0.1.0",
+      "author": {
+        "name": "muralx"
+      },
+      "source": "./plugin",
+      "category": "development"
+    }
+  ]
+}

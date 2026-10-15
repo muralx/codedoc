@@ -1,0 +1,108 @@
+{
+  "Symbols": [
+    {
+      "Kind": "function",
+      "Name": "stores and checks an environment",
+      "Qualified": "src/records.test.ts/it:stores and checks an environment",
+      "Container": "",
+      "Span": {
+        "StartByte": 55,
+        "EndByte": 273,
+        "StartLine": 3,
+        "EndLine": 8
+      },
+      "Signature": {
+        "StartByte": 55,
+        "EndByte": 101,
+        "StartLine": 3,
+        "EndLine": 3
+      },
+      "SigText": "it('stores and checks an environment', () =\u003e {",
+      "Visibility": "package",
+      "IsTest": true,
+      "BodyHash": "336b8ec57336c84e",
+      "Doc": null
+    }
+  ],
+  "References": [
+    {
+      "Kind": "call",
+      "Name": "it",
+      "Qualifier": "",
+      "Enclosing": "src/records.test.ts/it:stores and checks an environment",
+      "Line": 3,
+      "Col": 0,
+      "Arity": 2
+    },
+    {
+      "Kind": "instantiate",
+      "Name": "MemoryRepo",
+      "Qualifier": "",
+      "Enclosing": "src/records.test.ts/it:stores and checks an environment",
+      "Line": 4,
+      "Col": 19,
+      "Arity": 0
+    },
+    {
+      "Kind": "call",
+      "Name": "save",
+      "Qualifier": "repo",
+      "Enclosing": "src/records.test.ts/it:stores and checks an environment",
+      "Line": 5,
+      "Col": 7,
+      "Arity": 1,
+      "RecvType": "MemoryRepo"
+    },
+    {
+      "Kind": "call",
+      "Name": "load",
+      "Qualifier": "repo",
+      "Enclosing": "src/records.test.ts/it:stores and checks an environment",
+      "Line": 6,
+      "Col": 19,
+      "Arity": 1,
+      "RecvType": "MemoryRepo"
+    },
+    {
+      "Kind": "call",
+      "Name": "toBe",
+      "Qualifier": "expect()",
+      "Enclosing": "src/records.test.ts/it:stores and checks an environment",
+      "Line": 7,
+      "Col": 46,
+      "Arity": 1
+    },
+    {
+      "Kind": "call",
+      "Name": "expect",
+      "Qualifier": "",
+      "Enclosing": "src/records.test.ts/it:stores and checks an environment",
+      "Line": 7,
+      "Col": 2,
+      "Arity": 1
+    },
+    {
+      "Kind": "call",
+      "Name": "isHealthy",
+      "Qualifier": "",
+      "Enclosing": "src/records.test.ts/it:stores and checks an environment",
+      "Line": 7,
+      "Col": 30,
+      "Arity": 1
+    }
+  ],
+  "Imports": [
+    {
+      "Raw": "./records.js",
+      "Alias": "",
+      "Names": [
+        "MemoryRepo",
+        "isHealthy"
+      ],
+      "Line": 1
+    }
+  ],
+  "ModuleDoc": null,
+  "ModuleName": "",
+  "ParseErrors": 0
+}

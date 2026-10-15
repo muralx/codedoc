@@ -1,0 +1,5 @@
+py-lib@35fef60
+== callees of Service.lookup (1)
+fallback  src/pylib/service.py:14  return fallback(key)
+== possibly callees of Service.lookup (1)
+? Store.get | MemStore.get  src/pylib/service.py:12  found = self.store.get(key)

@@ -1,0 +1,24 @@
+codedoc symbol MemStore.Get -> 228
+codedoc symbol py-lib:src/pylib/store.py#MemStore --budget 500 -> 481
+codedoc symbol MemStore.Get MemStore.Put NewMemStore -> 544
+codedoc outline go-lib:store/store.go -> 600
+codedoc find *Store* -> 1138
+codedoc callers MemStore.Get -> 148
+codedoc callers MemStore.Get -C 2 -> 214
+codedoc refs go-lib:store/store.go#MemStore -> 302
+codedoc lines go-lib:store/store.go 26-32 -> 211
+codedoc ls go-lib:. -> 356
+codedoc ls go-lib:. --long -> 709
+codedoc search persist values by key --limit 5 -> 1034
+codedoc where persist values by key -> 1261
+codedoc explain MemStore.Get -> 650
+codedoc impact MemStore.Get -> 473
+codedoc impact go-lib:store/store.go#Store.Get -> 572
+codedoc how Service.Lookup -> 941
+codedoc how go-app:main.go -> 908
+codedoc overview -> 2935
+codedoc status -> 1114
+codedoc find Server --deps -> 157
+codedoc callers Server.revision -> 167
+codedoc api @acme/sdk -> 477
+codedoc api @acme/sdk Server -> 601

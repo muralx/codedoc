@@ -1,0 +1,32 @@
+{
+  "Symbols": [
+    {
+      "Kind": "function",
+      "Name": "Generated",
+      "Qualified": "Generated",
+      "Container": "",
+      "Span": {
+        "StartByte": 61,
+        "EndByte": 94,
+        "StartLine": 5,
+        "EndLine": 5
+      },
+      "Signature": {
+        "StartByte": 61,
+        "EndByte": 81,
+        "StartLine": 5,
+        "EndLine": 5
+      },
+      "SigText": "func Generated() int",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "cdabafeb762582b0",
+      "Doc": null
+    }
+  ],
+  "References": null,
+  "Imports": null,
+  "ModuleDoc": null,
+  "ModuleName": "service",
+  "ParseErrors": 0
+}

@@ -1,0 +1,29 @@
+{
+  "Format": "shell",
+  "Defs": [
+    {
+      "Key": "JAVALIB_HOME",
+      "Line": 4,
+      "Preview": "/opt/javalib"
+    },
+    {
+      "Key": "PYLIB_MODE",
+      "Line": 5,
+      "Preview": "${LIB_MODE:-dev}"
+    }
+  ],
+  "Refs": [
+    {
+      "Key": "LIB_MODE",
+      "Line": 5
+    },
+    {
+      "Key": "API_URL",
+      "Line": 6
+    },
+    {
+      "Key": "PYLIB_MODE",
+      "Line": 6
+    }
+  ]
+}

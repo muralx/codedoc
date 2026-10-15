@@ -1,0 +1,71 @@
+{
+  "Symbols": [
+    {
+      "Kind": "function",
+      "Name": "check",
+      "Qualified": "src/main.ts/check",
+      "Container": "",
+      "Span": {
+        "StartByte": 58,
+        "EndByte": 216,
+        "StartLine": 3,
+        "EndLine": 7
+      },
+      "Signature": {
+        "StartByte": 58,
+        "EndByte": 102,
+        "StartLine": 3,
+        "EndLine": 3
+      },
+      "SigText": "export function check(name: string): boolean",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "42b78f5ef13cddfc",
+      "Doc": null
+    }
+  ],
+  "References": [
+    {
+      "Kind": "instantiate",
+      "Name": "MemoryRepo",
+      "Qualifier": "",
+      "Enclosing": "src/main.ts/check",
+      "Line": 4,
+      "Col": 19,
+      "Arity": 0
+    },
+    {
+      "Kind": "call",
+      "Name": "load",
+      "Qualifier": "repo",
+      "Enclosing": "src/main.ts/check",
+      "Line": 5,
+      "Col": 19,
+      "Arity": 1,
+      "RecvType": "MemoryRepo"
+    },
+    {
+      "Kind": "call",
+      "Name": "isHealthy",
+      "Qualifier": "",
+      "Enclosing": "src/main.ts/check",
+      "Line": 6,
+      "Col": 30,
+      "Arity": 1
+    }
+  ],
+  "Imports": [
+    {
+      "Raw": "@fixture/domain",
+      "Alias": "",
+      "Names": [
+        "MemoryRepo",
+        "isHealthy"
+      ],
+      "Line": 1
+    }
+  ],
+  "ModuleDoc": null,
+  "ModuleName": "",
+  "ParseErrors": 0
+}

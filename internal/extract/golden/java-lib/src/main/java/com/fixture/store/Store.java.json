@@ -1,0 +1,135 @@
+{
+  "Symbols": [
+    {
+      "Kind": "interface",
+      "Name": "Store",
+      "Qualified": "Store",
+      "Container": "",
+      "Span": {
+        "StartByte": 118,
+        "EndByte": 369,
+        "StartLine": 8,
+        "EndLine": 19
+      },
+      "Signature": {
+        "StartByte": 118,
+        "EndByte": 140,
+        "StartLine": 8,
+        "EndLine": 8
+      },
+      "SigText": "public interface Store",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "19758133e2c4ca3d",
+      "Doc": {
+        "Text": "Store is a key-value store.\n\n\u003cp\u003eImplementations decide where values live.",
+        "Span": {
+          "StartByte": 28,
+          "EndByte": 117,
+          "StartLine": 3,
+          "EndLine": 7
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "get",
+      "Qualified": "Store.get",
+      "Container": "Store",
+      "Span": {
+        "StartByte": 194,
+        "EndByte": 217,
+        "StartLine": 10,
+        "EndLine": 10
+      },
+      "Signature": {
+        "StartByte": 194,
+        "EndByte": 216,
+        "StartLine": 10,
+        "EndLine": 10
+      },
+      "SigText": "String get(String key)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "eeac52742d5ddd86",
+      "SigHash": "9b3a",
+      "Doc": {
+        "Text": "Returns the value stored under key.",
+        "Span": {
+          "StartByte": 147,
+          "EndByte": 189,
+          "StartLine": 9,
+          "EndLine": 9
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "put",
+      "Qualified": "Store.put",
+      "Container": "Store",
+      "Span": {
+        "StartByte": 270,
+        "EndByte": 305,
+        "StartLine": 15,
+        "EndLine": 15
+      },
+      "Signature": {
+        "StartByte": 270,
+        "EndByte": 304,
+        "StartLine": 15,
+        "EndLine": 15
+      },
+      "SigText": "void put(String key, String value)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "ae1745ab97b15460",
+      "SigHash": "1d09",
+      "Doc": {
+        "Text": "Stores value under key.",
+        "Span": {
+          "StartByte": 223,
+          "EndByte": 265,
+          "StartLine": 12,
+          "EndLine": 14
+        }
+      }
+    },
+    {
+      "Kind": "const",
+      "Name": "TIMEOUT",
+      "Qualified": "Store.TIMEOUT",
+      "Container": "Store",
+      "Span": {
+        "StartByte": 350,
+        "EndByte": 367,
+        "StartLine": 18,
+        "EndLine": 18
+      },
+      "Signature": {
+        "StartByte": 350,
+        "EndByte": 366,
+        "StartLine": 18,
+        "EndLine": 18
+      },
+      "SigText": "int TIMEOUT = 30",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "9189f1fa6e207c72",
+      "Doc": {
+        "Text": "Default timeout in seconds.",
+        "Span": {
+          "StartByte": 311,
+          "EndByte": 345,
+          "StartLine": 17,
+          "EndLine": 17
+        }
+      }
+    }
+  ],
+  "References": null,
+  "Imports": null,
+  "ModuleDoc": null,
+  "ModuleName": "com.fixture.store",
+  "ParseErrors": 0
+}

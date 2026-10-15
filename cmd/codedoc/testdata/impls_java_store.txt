@@ -1,0 +1,3 @@
+java-lib@6be3ec0
+== implementations of Store (1)
+MemStore  src/main/java/com/fixture/store/MemStore.java:8  public class MemStore implements Store {

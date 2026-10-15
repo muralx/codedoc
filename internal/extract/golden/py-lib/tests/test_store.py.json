@@ -1,0 +1,165 @@
+{
+  "Symbols": [
+    {
+      "Kind": "function",
+      "Name": "test_put_get",
+      "Qualified": "test_put_get",
+      "Container": "",
+      "Span": {
+        "StartByte": 35,
+        "EndByte": 118,
+        "StartLine": 4,
+        "EndLine": 7
+      },
+      "Signature": {
+        "StartByte": 35,
+        "EndByte": 53,
+        "StartLine": 4,
+        "EndLine": 4
+      },
+      "SigText": "def test_put_get()",
+      "Visibility": "public",
+      "IsTest": true,
+      "BodyHash": "cd4721b8fbf03b6c",
+      "Doc": null
+    },
+    {
+      "Kind": "class",
+      "Name": "TestMemStore",
+      "Qualified": "TestMemStore",
+      "Container": "",
+      "Span": {
+        "StartByte": 121,
+        "EndByte": 249,
+        "StartLine": 10,
+        "EndLine": 15
+      },
+      "Signature": {
+        "StartByte": 121,
+        "EndByte": 139,
+        "StartLine": 10,
+        "EndLine": 10
+      },
+      "SigText": "class TestMemStore",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "ea1228c8c97fd929",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "test_missing",
+      "Qualified": "TestMemStore.test_missing",
+      "Container": "TestMemStore",
+      "Span": {
+        "StartByte": 145,
+        "EndByte": 206,
+        "StartLine": 11,
+        "EndLine": 12
+      },
+      "Signature": {
+        "StartByte": 145,
+        "EndByte": 167,
+        "StartLine": 11,
+        "EndLine": 11
+      },
+      "SigText": "def test_missing(self)",
+      "Visibility": "public",
+      "IsTest": true,
+      "BodyHash": "2d9efa4ed607a21a",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "helper",
+      "Qualified": "TestMemStore.helper",
+      "Container": "TestMemStore",
+      "Span": {
+        "StartByte": 212,
+        "EndByte": 249,
+        "StartLine": 14,
+        "EndLine": 15
+      },
+      "Signature": {
+        "StartByte": 212,
+        "EndByte": 228,
+        "StartLine": 14,
+        "EndLine": 14
+      },
+      "SigText": "def helper(self)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "42a5db9fb7a29ae6",
+      "Doc": null
+    }
+  ],
+  "References": [
+    {
+      "Kind": "call",
+      "Name": "MemStore",
+      "Qualifier": "",
+      "Enclosing": "test_put_get",
+      "Line": 5,
+      "Col": 8,
+      "Arity": 0
+    },
+    {
+      "Kind": "instantiate",
+      "Name": "MemStore",
+      "Qualifier": "",
+      "Enclosing": "test_put_get",
+      "Line": 5,
+      "Col": 8,
+      "Arity": 0
+    },
+    {
+      "Kind": "call",
+      "Name": "put",
+      "Qualifier": "s",
+      "Enclosing": "test_put_get",
+      "Line": 6,
+      "Col": 6,
+      "Arity": 2
+    },
+    {
+      "Kind": "call",
+      "Name": "get",
+      "Qualifier": "s",
+      "Enclosing": "test_put_get",
+      "Line": 7,
+      "Col": 13,
+      "Arity": 1
+    },
+    {
+      "Kind": "call",
+      "Name": "MemStore",
+      "Qualifier": "",
+      "Enclosing": "TestMemStore.test_missing",
+      "Line": 12,
+      "Col": 15,
+      "Arity": 0
+    },
+    {
+      "Kind": "instantiate",
+      "Name": "MemStore",
+      "Qualifier": "",
+      "Enclosing": "TestMemStore.test_missing",
+      "Line": 12,
+      "Col": 15,
+      "Arity": 0
+    }
+  ],
+  "Imports": [
+    {
+      "Raw": "pylib.store",
+      "Alias": "",
+      "Names": [
+        "MemStore"
+      ],
+      "Line": 1
+    }
+  ],
+  "ModuleDoc": null,
+  "ModuleName": "",
+  "ParseErrors": 0
+}

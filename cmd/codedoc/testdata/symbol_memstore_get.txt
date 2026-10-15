@@ -1,0 +1,10 @@
+go-lib@0b29eeb
+MemStore.Get  store/store.go:26-32
+25	// Get implements Store.
+26	func (m *MemStore) Get(key string) (string, error) {
+27		v, ok := m.data[key]
+28		if !ok {
+29			return "", ErrMissing
+30		}
+31		return v, nil
+32	}

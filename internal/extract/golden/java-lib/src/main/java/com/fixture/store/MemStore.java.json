@@ -1,0 +1,451 @@
+{
+  "Symbols": [
+    {
+      "Kind": "class",
+      "Name": "MemStore",
+      "Qualified": "MemStore",
+      "Container": "",
+      "Span": {
+        "StartByte": 140,
+        "EndByte": 884,
+        "StartLine": 8,
+        "EndLine": 39
+      },
+      "Signature": {
+        "StartByte": 140,
+        "EndByte": 178,
+        "StartLine": 8,
+        "EndLine": 8
+      },
+      "SigText": "public class MemStore implements Store",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "d810843da6bda4b8",
+      "Doc": {
+        "Text": "MemStore keeps values in memory.",
+        "Span": {
+          "StartByte": 100,
+          "EndByte": 139,
+          "StartLine": 7,
+          "EndLine": 7
+        }
+      }
+    },
+    {
+      "Kind": "field",
+      "Name": "data",
+      "Qualified": "MemStore.data",
+      "Container": "MemStore",
+      "Span": {
+        "StartByte": 185,
+        "EndByte": 224,
+        "StartLine": 9,
+        "EndLine": 9
+      },
+      "Signature": {
+        "StartByte": 185,
+        "EndByte": 223,
+        "StartLine": 9,
+        "EndLine": 9
+      },
+      "SigText": "private final Map\u003cString, String\u003e data",
+      "Visibility": "private",
+      "IsTest": false,
+      "BodyHash": "f2de2ec668f80628",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "\u003cinit\u003e",
+      "Qualified": "MemStore.\u003cinit\u003e",
+      "Container": "MemStore",
+      "Span": {
+        "StartByte": 265,
+        "EndByte": 327,
+        "StartLine": 12,
+        "EndLine": 14
+      },
+      "Signature": {
+        "StartByte": 265,
+        "EndByte": 282,
+        "StartLine": 12,
+        "EndLine": 12
+      },
+      "SigText": "public MemStore()",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "44699898bcf1b732",
+      "SigHash": "ef46",
+      "Doc": {
+        "Text": "Creates an empty store.",
+        "Span": {
+          "StartByte": 230,
+          "EndByte": 260,
+          "StartLine": 11,
+          "EndLine": 11
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "get",
+      "Qualified": "MemStore.get",
+      "Container": "MemStore",
+      "Span": {
+        "StartByte": 380,
+        "EndByte": 461,
+        "StartLine": 17,
+        "EndLine": 20
+      },
+      "Signature": {
+        "StartByte": 394,
+        "EndByte": 423,
+        "StartLine": 18,
+        "EndLine": 18
+      },
+      "SigText": "public String get(String key)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "1e4f53c3672a099b",
+      "SigHash": "9b3a",
+      "Doc": {
+        "Text": "Returns the value for key, or null.",
+        "Span": {
+          "StartByte": 333,
+          "EndByte": 375,
+          "StartLine": 16,
+          "EndLine": 16
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "put",
+      "Qualified": "MemStore.put",
+      "Container": "MemStore",
+      "Span": {
+        "StartByte": 467,
+        "EndByte": 560,
+        "StartLine": 22,
+        "EndLine": 25
+      },
+      "Signature": {
+        "StartByte": 481,
+        "EndByte": 522,
+        "StartLine": 23,
+        "EndLine": 23
+      },
+      "SigText": "public void put(String key, String value)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "2900a11d72f3cb02",
+      "SigHash": "1d09",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "put",
+      "Qualified": "MemStore.put",
+      "Container": "MemStore",
+      "Span": {
+        "StartByte": 566,
+        "EndByte": 653,
+        "StartLine": 27,
+        "EndLine": 29
+      },
+      "Signature": {
+        "StartByte": 566,
+        "EndByte": 604,
+        "StartLine": 27,
+        "EndLine": 27
+      },
+      "SigText": "public void put(String key, int value)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "58b9412f7a29e960",
+      "SigHash": "dbc4",
+      "Doc": null
+    },
+    {
+      "Kind": "const",
+      "Name": "KIND",
+      "Qualified": "MemStore.KIND",
+      "Container": "MemStore",
+      "Span": {
+        "StartByte": 659,
+        "EndByte": 695,
+        "StartLine": 31,
+        "EndLine": 31
+      },
+      "Signature": {
+        "StartByte": 659,
+        "EndByte": 694,
+        "StartLine": 31,
+        "EndLine": 31
+      },
+      "SigText": "static final String KIND = \"memory\"",
+      "Visibility": "package",
+      "IsTest": false,
+      "BodyHash": "c8e727c072a7f44a",
+      "Doc": null,
+      "Value": "memory"
+    },
+    {
+      "Kind": "enum",
+      "Name": "Entry",
+      "Qualified": "MemStore.Entry",
+      "Container": "MemStore",
+      "Span": {
+        "StartByte": 729,
+        "EndByte": 759,
+        "StartLine": 34,
+        "EndLine": 34
+      },
+      "Signature": {
+        "StartByte": 729,
+        "EndByte": 739,
+        "StartLine": 34,
+        "EndLine": 34
+      },
+      "SigText": "enum Entry",
+      "Visibility": "package",
+      "IsTest": false,
+      "BodyHash": "587fc878aab74565",
+      "Doc": {
+        "Text": "Kind of entries.",
+        "Span": {
+          "StartByte": 701,
+          "EndByte": 724,
+          "StartLine": 33,
+          "EndLine": 33
+        }
+      }
+    },
+    {
+      "Kind": "const",
+      "Name": "PLAIN",
+      "Qualified": "MemStore.Entry.PLAIN",
+      "Container": "MemStore.Entry",
+      "Span": {
+        "StartByte": 742,
+        "EndByte": 747,
+        "StartLine": 34,
+        "EndLine": 34
+      },
+      "Signature": {
+        "StartByte": 742,
+        "EndByte": 747,
+        "StartLine": 34,
+        "EndLine": 34
+      },
+      "SigText": "PLAIN",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "bb95cee49c9702c4",
+      "Doc": null
+    },
+    {
+      "Kind": "const",
+      "Name": "EXPIRING",
+      "Qualified": "MemStore.Entry.EXPIRING",
+      "Container": "MemStore.Entry",
+      "Span": {
+        "StartByte": 749,
+        "EndByte": 757,
+        "StartLine": 34,
+        "EndLine": 34
+      },
+      "Signature": {
+        "StartByte": 749,
+        "EndByte": 757,
+        "StartLine": 34,
+        "EndLine": 34
+      },
+      "SigText": "EXPIRING",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "444461d5d4674829",
+      "Doc": null
+    },
+    {
+      "Kind": "class",
+      "Name": "Cursor",
+      "Qualified": "MemStore.Cursor",
+      "Container": "MemStore",
+      "Span": {
+        "StartByte": 765,
+        "EndByte": 882,
+        "StartLine": 36,
+        "EndLine": 38
+      },
+      "Signature": {
+        "StartByte": 765,
+        "EndByte": 802,
+        "StartLine": 36,
+        "EndLine": 36
+      },
+      "SigText": "class Cursor\u003cT extends Comparable\u003cT\u003e\u003e",
+      "Visibility": "package",
+      "IsTest": false,
+      "BodyHash": "8ab9b8bdcb5f0e53",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "move",
+      "Qualified": "MemStore.Cursor.move",
+      "Container": "MemStore.Cursor",
+      "Span": {
+        "StartByte": 813,
+        "EndByte": 876,
+        "StartLine": 37,
+        "EndLine": 37
+      },
+      "Signature": {
+        "StartByte": 813,
+        "EndByte": 873,
+        "StartLine": 37,
+        "EndLine": 37
+      },
+      "SigText": "protected void move(List\u003c? extends T\u003e items, String... rest)",
+      "Visibility": "package",
+      "IsTest": false,
+      "BodyHash": "0b14e3010a19dfa1",
+      "SigHash": "a6af",
+      "Doc": null
+    }
+  ],
+  "References": [
+    {
+      "Kind": "implement",
+      "Name": "Store",
+      "Qualifier": "",
+      "Enclosing": "MemStore",
+      "Line": 8,
+      "Col": 33,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "Map",
+      "Qualifier": "",
+      "Enclosing": "MemStore.data",
+      "Line": 9,
+      "Col": 18,
+      "Arity": -1
+    },
+    {
+      "Kind": "field",
+      "Name": "data",
+      "Qualifier": "this",
+      "Enclosing": "MemStore.\u003cinit\u003e",
+      "Line": 13,
+      "Col": 13,
+      "Arity": -1
+    },
+    {
+      "Kind": "instantiate",
+      "Name": "HashMap",
+      "Qualifier": "",
+      "Enclosing": "MemStore.\u003cinit\u003e",
+      "Line": 13,
+      "Col": 24,
+      "Arity": 0
+    },
+    {
+      "Kind": "call",
+      "Name": "get",
+      "Qualifier": "data",
+      "Enclosing": "MemStore.get",
+      "Line": 19,
+      "Col": 20,
+      "Arity": 1
+    },
+    {
+      "Kind": "call",
+      "Name": "put",
+      "Qualifier": "data",
+      "Enclosing": "MemStore.put",
+      "Line": 24,
+      "Col": 13,
+      "Arity": 2
+    },
+    {
+      "Kind": "call",
+      "Name": "put",
+      "Qualifier": "",
+      "Enclosing": "MemStore.put",
+      "Line": 28,
+      "Col": 8,
+      "Arity": 2
+    },
+    {
+      "Kind": "call",
+      "Name": "valueOf",
+      "Qualifier": "String",
+      "Enclosing": "MemStore.put",
+      "Line": 28,
+      "Col": 24,
+      "Arity": 1
+    },
+    {
+      "Kind": "type",
+      "Name": "Comparable",
+      "Qualifier": "",
+      "Enclosing": "MemStore.Cursor",
+      "Line": 36,
+      "Col": 27,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "T",
+      "Qualifier": "",
+      "Enclosing": "MemStore.Cursor",
+      "Line": 36,
+      "Col": 38,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "List",
+      "Qualifier": "",
+      "Enclosing": "MemStore.Cursor.move",
+      "Line": 37,
+      "Col": 28,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "T",
+      "Qualifier": "",
+      "Enclosing": "MemStore.Cursor.move",
+      "Line": 37,
+      "Col": 43,
+      "Arity": -1
+    }
+  ],
+  "Imports": [
+    {
+      "Raw": "java.util.HashMap",
+      "Alias": "HashMap",
+      "Names": null,
+      "Line": 3
+    },
+    {
+      "Raw": "java.util.List",
+      "Alias": "List",
+      "Names": null,
+      "Line": 4
+    },
+    {
+      "Raw": "java.util.Map",
+      "Alias": "Map",
+      "Names": null,
+      "Line": 5
+    }
+  ],
+  "ModuleDoc": null,
+  "ModuleName": "com.fixture.store",
+  "ParseErrors": 0
+}

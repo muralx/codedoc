@@ -1,0 +1,8 @@
+deps-app@2570b72 deps-go@fc1219f
+Client  <modcache>/github.com/acme/kit@v1.4.0/kit.go:12-17  type Client struct  Client talks to an Acme service.  [dep github.com/acme/kit@v1.4.0] [from github.com/acme/kit]
+== members of Client (4)
+kit.go
+  Name  :14  string
+  Base  :16  field
+  Do  :31  () error
+  Base.Close  :23  () error

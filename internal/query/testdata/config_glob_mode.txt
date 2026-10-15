@@ -1,0 +1,19 @@
+go-lib@0b29eeb py-lib@35fef60 cfg-repo@41d66d8
+== config keys matching *_MODE (2)
+LIB_MODE  defines:2 references:2 reads:1 in cfg-repo
+PYLIB_MODE  defines:2 references:1 reads:1 in cfg-repo
+== defines LIB_MODE (2)
+cfg-repo:.env:2  env  dev
+cfg-repo:config/settings.json:2  json  prod
+== references LIB_MODE (2)
+cfg-repo:.env:4  env
+cfg-repo:scripts/setup.sh:5  shell
+== reads LIB_MODE (1)
+Mode  go-lib:service/service.go:28  func Mode() string  Mode returns the library mode from the environment.
+== defines PYLIB_MODE (2)
+cfg-repo:.env:4  env  ${LIB_MODE}
+cfg-repo:scripts/setup.sh:5  shell  ${LIB_MODE:-dev}
+== references PYLIB_MODE (1)
+cfg-repo:scripts/setup.sh:6  shell
+== reads PYLIB_MODE (1)
+mode  py-lib:src/pylib/store.py:52  async def mode() -> str

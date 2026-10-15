@@ -1,0 +1,4 @@
+go-lib@0b29eeb go-app@f29d590
+== callers of Service.Lookup (2)
+run  go-app:main.go:16  func run(svc *service.Service) string { return svc.Lookup("k") }
+  main  go-app:main.go:13  fmt.Println(run(svc))

@@ -1,0 +1,22 @@
+= Operations guide
+
+How to run the library in production.
+
+== Install
+
+Fetch the module.
+
+----
+== not a title: inside a listing block
+go get github.com/acme/go-lib
+----
+
+== Configure
+
+=== Modes
+
+Set LIB_MODE to choose the store.
+
+== Upgrade
+
+Read the changelog first.

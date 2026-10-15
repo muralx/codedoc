@@ -1,0 +1,5 @@
+lockfileVersion: "9.0"
+importers:
+  .:
+    dependencies:
+      "@acme/sdk": {specifier: ^1.2.0, version: 1.2.0}

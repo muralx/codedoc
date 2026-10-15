@@ -1,0 +1,3 @@
+go-lib@0b29eeb
+== other implementations of Store (1)
+NullStore.Get  store/null.go:6  func (NullStore) Get(key string) (string, error)

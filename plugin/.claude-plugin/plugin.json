@@ -1,0 +1,11 @@
+{
+  "name": "codedoc",
+  "description": "Local code knowledge index for agents: structural queries (outline, symbol, callers, tests, config), doc search, and documentation upkeep through the codedoc CLI and MCP server.",
+  "version": "0.1.0",
+  "author": {
+    "name": "muralx"
+  },
+  "homepage": "https://github.com/muralx/codedoc",
+  "repository": "https://github.com/muralx/codedoc",
+  "license": "Apache-2.0"
+}

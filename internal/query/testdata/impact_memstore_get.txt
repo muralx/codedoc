@@ -1,0 +1,9 @@
+go-lib@0b29eeb
+MemStore.Get  store/store.go:26-32  func (m *MemStore) Get(key string) (string, error)  Get implements Store.
+== callers (1)
+TestMemStorePutGet  store/store_test.go:10  if v, err := m.Get("k"); err != nil || v != "v" {  [test]
+== implements or overrides (1)
+Store.Get  store/store.go:12  Get(key string) (string, error)
+== tests (1)
+TestMemStorePutGet  store/store_test.go:10
+exported  yes (public member of MemStore)  no other repo of the workspace uses it

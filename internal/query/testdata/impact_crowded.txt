@@ -1,0 +1,19 @@
+Data  m.go:4  func Data() string  Data returns the data.
+== callers (5)
+Twice  m.go:8  return Data() + Data()
+m_test.go
+  TestT0  :6  _ = Data()  [test]
+  TestT1  :10  [test]
+10		_ = Data()
+11		_ = Data()
+  10 more call sites in this file: codedoc callers Data --workspace w --offset 2
+== tests (4)
+m_test.go
+  TestT0  :6
+  TestT1  :10
+  TestT2  :18
+  TestT3  :25
+== mentions in documents and doc comments (2)
+Loading  docs/a.md:7  The data comes from `Data()`.
+Twice  m.go:6  // Twice joins what Data returns with itself.
+exported  yes

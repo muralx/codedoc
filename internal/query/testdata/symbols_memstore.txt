@@ -1,0 +1,21 @@
+go-lib@0b29eeb
+MemStore.Get  store/store.go:26-32
+25	// Get implements Store.
+26	func (m *MemStore) Get(key string) (string, error) {
+27		v, ok := m.data[key]
+28		if !ok {
+29			return "", ErrMissing
+30		}
+31		return v, nil
+32	}
+MemStore.Put  store/store.go:35-38
+34	// Put implements Store.
+35	func (m *MemStore) Put(key, value string) error {
+36		m.data[key] = value
+37		return nil
+38	}
+Nope  not found
+Store.Get  store/store.go:12
+11		// Get returns the value for key.
+12		Get(key string) (string, error)
+Get: also: MemStore.Get (go-lib:store/store.go:26), Cache.Get (go-lib:service/cache.go:9), NullStore.Get (go-lib:store/null.go:6)

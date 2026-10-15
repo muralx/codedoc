@@ -1,0 +1,420 @@
+{
+  "Symbols": [
+    {
+      "Kind": "class",
+      "Name": "Service",
+      "Qualified": "Service",
+      "Container": "",
+      "Span": {
+        "StartByte": 232,
+        "EndByte": 955,
+        "StartLine": 10,
+        "EndLine": 39
+      },
+      "Signature": {
+        "StartByte": 232,
+        "EndByte": 283,
+        "StartLine": 10,
+        "EndLine": 10
+      },
+      "SigText": "public class Service implements Comparable\u003cService\u003e",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "f775d1a7c751db23",
+      "Doc": {
+        "Text": "Service looks keys up in a store.",
+        "Span": {
+          "StartByte": 191,
+          "EndByte": 231,
+          "StartLine": 9,
+          "EndLine": 9
+        }
+      }
+    },
+    {
+      "Kind": "field",
+      "Name": "store",
+      "Qualified": "Service.store",
+      "Container": "Service",
+      "Span": {
+        "StartByte": 290,
+        "EndByte": 316,
+        "StartLine": 11,
+        "EndLine": 11
+      },
+      "Signature": {
+        "StartByte": 290,
+        "EndByte": 315,
+        "StartLine": 11,
+        "EndLine": 11
+      },
+      "SigText": "private final Store store",
+      "Visibility": "private",
+      "IsTest": false,
+      "BodyHash": "2d7d33b65a613e26",
+      "Doc": null
+    },
+    {
+      "Kind": "field",
+      "Name": "mode",
+      "Qualified": "Service.mode",
+      "Container": "Service",
+      "Span": {
+        "StartByte": 322,
+        "EndByte": 368,
+        "StartLine": 13,
+        "EndLine": 14
+      },
+      "Signature": {
+        "StartByte": 348,
+        "EndByte": 367,
+        "StartLine": 14,
+        "EndLine": 14
+      },
+      "SigText": "private String mode",
+      "Visibility": "private",
+      "IsTest": false,
+      "BodyHash": "c4520b2ccae203cf",
+      "Doc": null
+    },
+    {
+      "Kind": "field",
+      "Name": "timeout",
+      "Qualified": "Service.timeout",
+      "Container": "Service",
+      "Span": {
+        "StartByte": 374,
+        "EndByte": 426,
+        "StartLine": 16,
+        "EndLine": 17
+      },
+      "Signature": {
+        "StartByte": 406,
+        "EndByte": 425,
+        "StartLine": 17,
+        "EndLine": 17
+      },
+      "SigText": "private int timeout",
+      "Visibility": "private",
+      "IsTest": false,
+      "BodyHash": "4f68393411cad348",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "\u003cinit\u003e",
+      "Qualified": "Service.\u003cinit\u003e",
+      "Container": "Service",
+      "Span": {
+        "StartByte": 432,
+        "EndByte": 511,
+        "StartLine": 19,
+        "EndLine": 21
+      },
+      "Signature": {
+        "StartByte": 432,
+        "EndByte": 459,
+        "StartLine": 19,
+        "EndLine": 19
+      },
+      "SigText": "public Service(Store store)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "76140ee114732cd9",
+      "SigHash": "2c14",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "lookup",
+      "Qualified": "Service.lookup",
+      "Container": "Service",
+      "Span": {
+        "StartByte": 517,
+        "EndByte": 691,
+        "StartLine": 23,
+        "EndLine": 29
+      },
+      "Signature": {
+        "StartByte": 517,
+        "EndByte": 549,
+        "StartLine": 23,
+        "EndLine": 23
+      },
+      "SigText": "public String lookup(String key)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "d0e04549f9690d17",
+      "SigHash": "9b3a",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "fallback",
+      "Qualified": "Service.fallback",
+      "Container": "Service",
+      "Span": {
+        "StartByte": 697,
+        "EndByte": 827,
+        "StartLine": 31,
+        "EndLine": 33
+      },
+      "Signature": {
+        "StartByte": 697,
+        "EndByte": 739,
+        "StartLine": 31,
+        "EndLine": 31
+      },
+      "SigText": "private static String fallback(String key)",
+      "Visibility": "private",
+      "IsTest": false,
+      "BodyHash": "29fb88b1edf29aae",
+      "SigHash": "9b3a",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "compareTo",
+      "Qualified": "Service.compareTo",
+      "Container": "Service",
+      "Span": {
+        "StartByte": 833,
+        "EndByte": 953,
+        "StartLine": 35,
+        "EndLine": 38
+      },
+      "Signature": {
+        "StartByte": 847,
+        "EndByte": 882,
+        "StartLine": 36,
+        "EndLine": 36
+      },
+      "SigText": "public int compareTo(Service other)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "b061aa161ecffe09",
+      "SigHash": "aee1",
+      "Doc": null
+    }
+  ],
+  "References": [
+    {
+      "Kind": "implement",
+      "Name": "Comparable",
+      "Qualifier": "",
+      "Enclosing": "Service",
+      "Line": 10,
+      "Col": 32,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "Service",
+      "Qualifier": "",
+      "Enclosing": "Service",
+      "Line": 10,
+      "Col": 43,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "Store",
+      "Qualifier": "",
+      "Enclosing": "Service.store",
+      "Line": 11,
+      "Col": 18,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "Value",
+      "Qualifier": "",
+      "Enclosing": "Service.mode",
+      "Line": 13,
+      "Col": 5,
+      "Arity": -1
+    },
+    {
+      "Kind": "config",
+      "Name": "lib.mode",
+      "Qualifier": "accessor",
+      "Enclosing": "Service.mode",
+      "Line": 13,
+      "Col": 11,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "Value",
+      "Qualifier": "",
+      "Enclosing": "Service.timeout",
+      "Line": 16,
+      "Col": 5,
+      "Arity": -1
+    },
+    {
+      "Kind": "config",
+      "Name": "lib.timeout",
+      "Qualifier": "accessor",
+      "Enclosing": "Service.timeout",
+      "Line": 16,
+      "Col": 11,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "Store",
+      "Qualifier": "",
+      "Enclosing": "Service.\u003cinit\u003e",
+      "Line": 19,
+      "Col": 19,
+      "Arity": -1
+    },
+    {
+      "Kind": "field",
+      "Name": "store",
+      "Qualifier": "this",
+      "Enclosing": "Service.\u003cinit\u003e",
+      "Line": 20,
+      "Col": 13,
+      "Arity": -1
+    },
+    {
+      "Kind": "call",
+      "Name": "requireNonNull",
+      "Qualifier": "",
+      "Enclosing": "Service.\u003cinit\u003e",
+      "Line": 20,
+      "Col": 21,
+      "Arity": 1
+    },
+    {
+      "Kind": "call",
+      "Name": "get",
+      "Qualifier": "store",
+      "Enclosing": "Service.lookup",
+      "Line": 24,
+      "Col": 29,
+      "Arity": 1
+    },
+    {
+      "Kind": "call",
+      "Name": "fallback",
+      "Qualifier": "",
+      "Enclosing": "Service.lookup",
+      "Line": 26,
+      "Col": 19,
+      "Arity": 1
+    },
+    {
+      "Kind": "call",
+      "Name": "getenv",
+      "Qualifier": "System",
+      "Enclosing": "Service.fallback",
+      "Line": 32,
+      "Col": 22,
+      "Arity": 1
+    },
+    {
+      "Kind": "config",
+      "Name": "JAVALIB_HOME",
+      "Qualifier": "accessor",
+      "Enclosing": "Service.fallback",
+      "Line": 32,
+      "Col": 29,
+      "Arity": -1
+    },
+    {
+      "Kind": "call",
+      "Name": "getProperty",
+      "Qualifier": "System",
+      "Enclosing": "Service.fallback",
+      "Line": 32,
+      "Col": 54,
+      "Arity": 1
+    },
+    {
+      "Kind": "config",
+      "Name": "user.home",
+      "Qualifier": "accessor",
+      "Enclosing": "Service.fallback",
+      "Line": 32,
+      "Col": 66,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "Service",
+      "Qualifier": "",
+      "Enclosing": "Service.compareTo",
+      "Line": 36,
+      "Col": 25,
+      "Arity": -1
+    },
+    {
+      "Kind": "call",
+      "Name": "hashCode",
+      "Qualifier": "this.store",
+      "Enclosing": "Service.compareTo",
+      "Line": 37,
+      "Col": 26,
+      "Arity": 0
+    },
+    {
+      "Kind": "field",
+      "Name": "store",
+      "Qualifier": "this",
+      "Enclosing": "Service.compareTo",
+      "Line": 37,
+      "Col": 20,
+      "Arity": -1
+    },
+    {
+      "Kind": "call",
+      "Name": "hashCode",
+      "Qualifier": "other.store",
+      "Enclosing": "Service.compareTo",
+      "Line": 37,
+      "Col": 51,
+      "Arity": 0
+    },
+    {
+      "Kind": "field",
+      "Name": "store",
+      "Qualifier": "other",
+      "Enclosing": "Service.compareTo",
+      "Line": 37,
+      "Col": 45,
+      "Arity": -1
+    }
+  ],
+  "Imports": [
+    {
+      "Raw": "com.fixture.store.Store",
+      "Alias": "Store",
+      "Names": null,
+      "Line": 3
+    },
+    {
+      "Raw": "java.util.*",
+      "Alias": "",
+      "Names": null,
+      "Line": 4
+    },
+    {
+      "Raw": "org.springframework.beans.factory.annotation.Value",
+      "Alias": "Value",
+      "Names": null,
+      "Line": 5
+    },
+    {
+      "Raw": "java.util.Objects.requireNonNull",
+      "Alias": "requireNonNull",
+      "Names": null,
+      "Line": 7
+    }
+  ],
+  "ModuleDoc": null,
+  "ModuleName": "com.fixture.service",
+  "ParseErrors": 0
+}

@@ -1,0 +1,7 @@
+{
+  "codedoc": {
+    "type": "stdio",
+    "command": "codedoc",
+    "args": ["mcp"]
+  }
+}

@@ -1,0 +1,4 @@
+go-lib@0b29eeb
+== implementations of Store (2)
+NullStore  store/null.go:4  type NullStore struct{}
+MemStore  store/store.go:18  type MemStore struct {

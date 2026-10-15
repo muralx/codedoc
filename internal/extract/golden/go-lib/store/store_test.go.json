@@ -1,0 +1,98 @@
+{
+  "Symbols": [
+    {
+      "Kind": "function",
+      "Name": "TestMemStorePutGet",
+      "Qualified": "TestMemStorePutGet",
+      "Container": "",
+      "Span": {
+        "StartByte": 33,
+        "EndByte": 239,
+        "StartLine": 5,
+        "EndLine": 13
+      },
+      "Signature": {
+        "StartByte": 33,
+        "EndByte": 70,
+        "StartLine": 5,
+        "EndLine": 5
+      },
+      "SigText": "func TestMemStorePutGet(t *testing.T)",
+      "Visibility": "public",
+      "IsTest": true,
+      "BodyHash": "084d6d8d26786afb",
+      "Doc": null
+    }
+  ],
+  "References": [
+    {
+      "Kind": "type",
+      "Name": "T",
+      "Qualifier": "testing",
+      "Enclosing": "TestMemStorePutGet",
+      "Line": 5,
+      "Col": 35,
+      "Arity": -1
+    },
+    {
+      "Kind": "call",
+      "Name": "NewMemStore",
+      "Qualifier": "",
+      "Enclosing": "TestMemStorePutGet",
+      "Line": 6,
+      "Col": 6,
+      "Arity": 0
+    },
+    {
+      "Kind": "call",
+      "Name": "Put",
+      "Qualifier": "m",
+      "Enclosing": "TestMemStorePutGet",
+      "Line": 7,
+      "Col": 13,
+      "Arity": 2,
+      "RecvType": "NewMemStore()"
+    },
+    {
+      "Kind": "call",
+      "Name": "Fatal",
+      "Qualifier": "t",
+      "Enclosing": "TestMemStorePutGet",
+      "Line": 8,
+      "Col": 4,
+      "Arity": 1,
+      "RecvType": "testing.T"
+    },
+    {
+      "Kind": "call",
+      "Name": "Get",
+      "Qualifier": "m",
+      "Enclosing": "TestMemStorePutGet",
+      "Line": 10,
+      "Col": 16,
+      "Arity": 1,
+      "RecvType": "NewMemStore()"
+    },
+    {
+      "Kind": "call",
+      "Name": "Fatalf",
+      "Qualifier": "t",
+      "Enclosing": "TestMemStorePutGet",
+      "Line": 11,
+      "Col": 4,
+      "Arity": 3,
+      "RecvType": "testing.T"
+    }
+  ],
+  "Imports": [
+    {
+      "Raw": "testing",
+      "Alias": "",
+      "Names": null,
+      "Line": 3
+    }
+  ],
+  "ModuleDoc": null,
+  "ModuleName": "store",
+  "ParseErrors": 0
+}

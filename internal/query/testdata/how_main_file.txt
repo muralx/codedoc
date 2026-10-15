@@ -1,0 +1,15 @@
+go-lib@0b29eeb go-app@f29d590
+== explain go-app:main.go (3)
+fixture  workspace  repos: go-lib; go-app; ts-domain; ts-app
+  go-app  repo
+    github.com/fixture/app  go-app:.  module go go-package  Command app is the fixture entry point.
+== symbols (2)
+go-app:main.go
+  main  :11-14  func main()
+  run  :16  func run(svc *service.Service) string
+== flow from main (5)
+main  go-app:main.go:11-14
+  New  go-lib:service/service.go:14  func New(s store.Store) *Service — New wires a Service to a Store.
+  NewMemStore  go-lib:store/store.go:23  func NewMemStore() *MemStore — NewMemStore creates an empty MemStore.
+  run  go-app:main.go:16  func run(svc *service.Service) string
+    Service.Lookup  go-lib:service/service.go:17-23  func (svc *Service) Lookup(key string) string — Lookup returns the value for key, or "" when missing.

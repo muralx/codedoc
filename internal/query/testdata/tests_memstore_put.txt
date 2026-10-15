@@ -1,0 +1,3 @@
+go-lib@0b29eeb
+== tests of MemStore.Put (1)
+TestMemStorePutGet  store/store_test.go:7  if err := m.Put("k", "v"); err != nil {  [test]

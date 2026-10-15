@@ -1,0 +1,10 @@
+java-lib@6be3ec0 cfg-repo@41d66d8
+== config keys matching lib.* (2)
+lib.mode  defines:4 references:0 reads:1 in java-lib,cfg-repo
+lib.timeout  defines:0 references:0 reads:1  [undefined]
+== defines lib.mode (4)
+java-lib:pom.xml:8  xml  dev
+cfg-repo:config/app.properties:2  properties  dev
+cfg-repo:config/application.yaml:2  yaml  dev
+cfg-repo:pom.xml:6  xml  dev
+== defines lib.timeout (0)

@@ -1,0 +1,6 @@
+go-lib@0b29eeb
+== references to MemStore (3)
+store/store.go
+  NewMemStore  :23  func NewMemStore() *MemStore { return &MemStore{data: map[string]string{}} }
+  MemStore.Get  :26  func (m *MemStore) Get(key string) (string, error) {
+  MemStore.Put  :35  func (m *MemStore) Put(key, value string) error {

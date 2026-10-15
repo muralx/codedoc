@@ -1,0 +1,6 @@
+/codedoc
+coverage.out
+*.db
+coverage.internal.out
+models/
+.claude/

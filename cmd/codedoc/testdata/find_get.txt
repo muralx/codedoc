@@ -1,0 +1,7 @@
+go-lib@0b29eeb
+== find Get (4)
+Cache.Get  service/cache.go:9-12  func (c *Cache) Get(key string) (string, bool)  Get returns the cached value for key.
+NullStore.Get  store/null.go:6  func (NullStore) Get(key string) (string, error)
+store/store.go
+  Store.Get  :12  Get(key string) (string, error)  Get returns the value for key.
+  MemStore.Get  :26-32  func (m *MemStore) Get(key string) (string, error)  Get implements Store.

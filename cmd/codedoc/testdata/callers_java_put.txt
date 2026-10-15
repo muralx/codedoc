@@ -1,0 +1,5 @@
+java-lib@6be3ec0
+== callers of MemStore.put (0)
+== possibly callers of MemStore.put (2)
+? MemStore.put  src/main/java/com/fixture/store/MemStore.java:28  put(key, String.valueOf(value));  [1 of 2]
+? MemStoreTest.putThenGet  src/test/java/com/fixture/store/MemStoreTest.java:11  s.put("a", "1");  [test] [1 of 3]

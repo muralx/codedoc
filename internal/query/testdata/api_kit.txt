@@ -1,0 +1,13 @@
+deps-app@2570b72 deps-go@fc1219f
+github.com/acme/kit@v1.4.0  <modcache>/github.com/acme/kit@v1.4.0  A small toolkit used as a codedoc fixture.
+== github.com/acme/kit (7)
+Client  struct
+New  function(name string) *Client
+Base  struct
+Platform  function() string
+Doer  interface
+DefaultTimeout  const
+ErrClosed  var
+== modules of github.com/acme/kit (2)
+github.com/acme/kit  7 names
+github.com/acme/kit/transport  1 name

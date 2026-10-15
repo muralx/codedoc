@@ -1,0 +1,5 @@
+go-lib@0b29eeb go-app@f29d590
+Service.Lookup  go-lib:service/service.go:17-23  func (svc *Service) Lookup(key string) string  Lookup returns the value for key, or "" when missing.
+== callers (1)
+run  go-app:main.go:16  func run(svc *service.Service) string { return svc.Lookup("k") }
+exported  yes (public member of Service)  used by go-app

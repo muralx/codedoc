@@ -1,0 +1,5 @@
+go-lib@0b29eeb
+== github.com/fixture/lib/service (go-lib:service) (3)
+service/cache.go  4 symbols, 18 lines  2026-01-01 00:00
+service/gen.go  1 symbol, 5 lines  2026-01-01 00:00
+service/service.go  6 symbols, 28 lines  2026-01-01 00:00

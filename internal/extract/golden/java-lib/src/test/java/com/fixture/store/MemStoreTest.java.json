@@ -1,0 +1,148 @@
+{
+  "Symbols": [
+    {
+      "Kind": "class",
+      "Name": "MemStoreTest",
+      "Qualified": "MemStoreTest",
+      "Container": "",
+      "Span": {
+        "StartByte": 126,
+        "EndByte": 311,
+        "StartLine": 7,
+        "EndLine": 16
+      },
+      "Signature": {
+        "StartByte": 126,
+        "EndByte": 144,
+        "StartLine": 7,
+        "EndLine": 7
+      },
+      "SigText": "class MemStoreTest",
+      "Visibility": "package",
+      "IsTest": false,
+      "BodyHash": "2203ada7bcc4c936",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "putThenGet",
+      "Qualified": "MemStoreTest.putThenGet",
+      "Container": "MemStoreTest",
+      "Span": {
+        "StartByte": 151,
+        "EndByte": 287,
+        "StartLine": 8,
+        "EndLine": 13
+      },
+      "Signature": {
+        "StartByte": 161,
+        "EndByte": 178,
+        "StartLine": 9,
+        "EndLine": 9
+      },
+      "SigText": "void putThenGet()",
+      "Visibility": "package",
+      "IsTest": true,
+      "BodyHash": "4268a8bd33c9076c",
+      "SigHash": "ef46",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "helper",
+      "Qualified": "MemStoreTest.helper",
+      "Container": "MemStoreTest",
+      "Span": {
+        "StartByte": 293,
+        "EndByte": 309,
+        "StartLine": 15,
+        "EndLine": 15
+      },
+      "Signature": {
+        "StartByte": 293,
+        "EndByte": 306,
+        "StartLine": 15,
+        "EndLine": 15
+      },
+      "SigText": "void helper()",
+      "Visibility": "package",
+      "IsTest": false,
+      "BodyHash": "4f41b2ceafc6d1d4",
+      "SigHash": "ef46",
+      "Doc": null
+    }
+  ],
+  "References": [
+    {
+      "Kind": "type",
+      "Name": "Test",
+      "Qualifier": "",
+      "Enclosing": "MemStoreTest.putThenGet",
+      "Line": 8,
+      "Col": 5,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "MemStore",
+      "Qualifier": "",
+      "Enclosing": "MemStoreTest.putThenGet",
+      "Line": 10,
+      "Col": 8,
+      "Arity": -1
+    },
+    {
+      "Kind": "instantiate",
+      "Name": "MemStore",
+      "Qualifier": "",
+      "Enclosing": "MemStoreTest.putThenGet",
+      "Line": 10,
+      "Col": 25,
+      "Arity": 0
+    },
+    {
+      "Kind": "call",
+      "Name": "put",
+      "Qualifier": "s",
+      "Enclosing": "MemStoreTest.putThenGet",
+      "Line": 11,
+      "Col": 10,
+      "Arity": 2
+    },
+    {
+      "Kind": "call",
+      "Name": "assertEquals",
+      "Qualifier": "",
+      "Enclosing": "MemStoreTest.putThenGet",
+      "Line": 12,
+      "Col": 8,
+      "Arity": 2
+    },
+    {
+      "Kind": "call",
+      "Name": "get",
+      "Qualifier": "s",
+      "Enclosing": "MemStoreTest.putThenGet",
+      "Line": 12,
+      "Col": 28,
+      "Arity": 1
+    }
+  ],
+  "Imports": [
+    {
+      "Raw": "org.junit.jupiter.api.Assertions.assertEquals",
+      "Alias": "assertEquals",
+      "Names": null,
+      "Line": 3
+    },
+    {
+      "Raw": "org.junit.jupiter.api.Test",
+      "Alias": "Test",
+      "Names": null,
+      "Line": 5
+    }
+  ],
+  "ModuleDoc": null,
+  "ModuleName": "com.fixture.store",
+  "ParseErrors": 0
+}

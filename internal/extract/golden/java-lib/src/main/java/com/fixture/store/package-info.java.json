@@ -1,0 +1,16 @@
+{
+  "Symbols": null,
+  "References": null,
+  "Imports": null,
+  "ModuleDoc": {
+    "Text": "Storage abstractions of the Java fixture.",
+    "Span": {
+      "StartByte": 0,
+      "EndByte": 48,
+      "StartLine": 1,
+      "EndLine": 1
+    }
+  },
+  "ModuleName": "com.fixture.store",
+  "ParseErrors": 0
+}

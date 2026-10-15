@@ -1,0 +1,4 @@
+{
+  "store": {"mode": "memory"},
+  "retries": 3
+}

@@ -1,0 +1,41 @@
+{
+  "Format": "xml",
+  "Defs": [
+    {
+      "Key": "modelVersion",
+      "Line": 3,
+      "Preview": "4.0.0"
+    },
+    {
+      "Key": "artifactId",
+      "Line": 4,
+      "Preview": "fixture-cfg"
+    },
+    {
+      "Key": "properties.lib.mode",
+      "Line": 6,
+      "Preview": "dev"
+    },
+    {
+      "Key": "lib.mode",
+      "Line": 6,
+      "Preview": "dev"
+    },
+    {
+      "Key": "properties.javalib.home",
+      "Line": 7,
+      "Preview": "${JAVALIB_HOME}"
+    },
+    {
+      "Key": "javalib.home",
+      "Line": 7,
+      "Preview": "${JAVALIB_HOME}"
+    }
+  ],
+  "Refs": [
+    {
+      "Key": "JAVALIB_HOME",
+      "Line": 7
+    }
+  ]
+}

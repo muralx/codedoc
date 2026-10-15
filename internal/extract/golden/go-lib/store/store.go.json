@@ -1,0 +1,359 @@
+{
+  "Symbols": [
+    {
+      "Kind": "var",
+      "Name": "ErrMissing",
+      "Qualified": "ErrMissing",
+      "Container": "",
+      "Span": {
+        "StartByte": 155,
+        "EndByte": 193,
+        "StartLine": 7,
+        "EndLine": 7
+      },
+      "Signature": {
+        "StartByte": 155,
+        "EndByte": 193,
+        "StartLine": 7,
+        "EndLine": 7
+      },
+      "SigText": "var ErrMissing = errors.New(\"missing\")",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "1377872a43b334f1",
+      "Doc": {
+        "Text": "ErrMissing is returned when a key has no value.",
+        "Span": {
+          "StartByte": 104,
+          "EndByte": 154,
+          "StartLine": 6,
+          "EndLine": 6
+        }
+      }
+    },
+    {
+      "Kind": "interface",
+      "Name": "Store",
+      "Qualified": "Store",
+      "Container": "",
+      "Span": {
+        "StartByte": 235,
+        "EndByte": 389,
+        "StartLine": 10,
+        "EndLine": 15
+      },
+      "Signature": {
+        "StartByte": 235,
+        "EndByte": 255,
+        "StartLine": 10,
+        "EndLine": 10
+      },
+      "SigText": "type Store interface",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "521f7e5c678a8ad4",
+      "Doc": {
+        "Text": "Store persists string values by key.",
+        "Span": {
+          "StartByte": 195,
+          "EndByte": 234,
+          "StartLine": 9,
+          "EndLine": 9
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "Get",
+      "Qualified": "Store.Get",
+      "Container": "Store",
+      "Span": {
+        "StartByte": 294,
+        "EndByte": 325,
+        "StartLine": 12,
+        "EndLine": 12
+      },
+      "Signature": {
+        "StartByte": 294,
+        "EndByte": 325,
+        "StartLine": 12,
+        "EndLine": 12
+      },
+      "SigText": "Get(key string) (string, error)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "8a48ceb761d26dc6",
+      "Doc": {
+        "Text": "Get returns the value for key.",
+        "Span": {
+          "StartByte": 259,
+          "EndByte": 292,
+          "StartLine": 11,
+          "EndLine": 11
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "Put",
+      "Qualified": "Store.Put",
+      "Container": "Store",
+      "Span": {
+        "StartByte": 359,
+        "EndByte": 387,
+        "StartLine": 14,
+        "EndLine": 14
+      },
+      "Signature": {
+        "StartByte": 359,
+        "EndByte": 387,
+        "StartLine": 14,
+        "EndLine": 14
+      },
+      "SigText": "Put(key, value string) error",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "286bbcc5b94f5e50",
+      "Doc": {
+        "Text": "Put stores value under key.",
+        "Span": {
+          "StartByte": 327,
+          "EndByte": 357,
+          "StartLine": 13,
+          "EndLine": 13
+        }
+      }
+    },
+    {
+      "Kind": "struct",
+      "Name": "MemStore",
+      "Qualified": "MemStore",
+      "Container": "",
+      "Span": {
+        "StartByte": 426,
+        "EndByte": 474,
+        "StartLine": 18,
+        "EndLine": 20
+      },
+      "Signature": {
+        "StartByte": 426,
+        "EndByte": 446,
+        "StartLine": 18,
+        "EndLine": 18
+      },
+      "SigText": "type MemStore struct",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "6e6e31470446ef32",
+      "Doc": {
+        "Text": "MemStore is an in-memory Store.",
+        "Span": {
+          "StartByte": 391,
+          "EndByte": 425,
+          "StartLine": 17,
+          "EndLine": 17
+        }
+      }
+    },
+    {
+      "Kind": "field",
+      "Name": "data",
+      "Qualified": "MemStore.data",
+      "Container": "MemStore",
+      "Span": {
+        "StartByte": 450,
+        "EndByte": 472,
+        "StartLine": 19,
+        "EndLine": 19
+      },
+      "Signature": {
+        "StartByte": 450,
+        "EndByte": 472,
+        "StartLine": 19,
+        "EndLine": 19
+      },
+      "SigText": "data map[string]string",
+      "Visibility": "package",
+      "IsTest": false,
+      "BodyHash": "240b1c3473744675",
+      "Doc": null
+    },
+    {
+      "Kind": "function",
+      "Name": "NewMemStore",
+      "Qualified": "NewMemStore",
+      "Container": "",
+      "Span": {
+        "StartByte": 518,
+        "EndByte": 594,
+        "StartLine": 23,
+        "EndLine": 23
+      },
+      "Signature": {
+        "StartByte": 518,
+        "EndByte": 546,
+        "StartLine": 23,
+        "EndLine": 23
+      },
+      "SigText": "func NewMemStore() *MemStore",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "3760f4d26eaea9ed",
+      "Doc": {
+        "Text": "NewMemStore creates an empty MemStore.",
+        "Span": {
+          "StartByte": 476,
+          "EndByte": 517,
+          "StartLine": 22,
+          "EndLine": 22
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "Get",
+      "Qualified": "MemStore.Get",
+      "Container": "MemStore",
+      "Span": {
+        "StartByte": 621,
+        "EndByte": 749,
+        "StartLine": 26,
+        "EndLine": 32
+      },
+      "Signature": {
+        "StartByte": 621,
+        "EndByte": 671,
+        "StartLine": 26,
+        "EndLine": 26
+      },
+      "SigText": "func (m *MemStore) Get(key string) (string, error)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "0aa5261c07688189",
+      "Doc": {
+        "Text": "Get implements Store.",
+        "Span": {
+          "StartByte": 596,
+          "EndByte": 620,
+          "StartLine": 25,
+          "EndLine": 25
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "Put",
+      "Qualified": "MemStore.Put",
+      "Container": "MemStore",
+      "Span": {
+        "StartByte": 776,
+        "EndByte": 860,
+        "StartLine": 35,
+        "EndLine": 38
+      },
+      "Signature": {
+        "StartByte": 776,
+        "EndByte": 823,
+        "StartLine": 35,
+        "EndLine": 35
+      },
+      "SigText": "func (m *MemStore) Put(key, value string) error",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "d217a81a0dd1ee92",
+      "Doc": {
+        "Text": "Put implements Store.",
+        "Span": {
+          "StartByte": 751,
+          "EndByte": 775,
+          "StartLine": 34,
+          "EndLine": 34
+        }
+      }
+    }
+  ],
+  "References": [
+    {
+      "Kind": "call",
+      "Name": "New",
+      "Qualifier": "errors",
+      "Enclosing": "ErrMissing",
+      "Line": 7,
+      "Col": 24,
+      "Arity": 1
+    },
+    {
+      "Kind": "type",
+      "Name": "MemStore",
+      "Qualifier": "",
+      "Enclosing": "NewMemStore",
+      "Line": 23,
+      "Col": 20,
+      "Arity": -1
+    },
+    {
+      "Kind": "instantiate",
+      "Name": "MemStore",
+      "Qualifier": "",
+      "Enclosing": "NewMemStore",
+      "Line": 23,
+      "Col": 39,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "MemStore",
+      "Qualifier": "",
+      "Enclosing": "MemStore.Get",
+      "Line": 26,
+      "Col": 9,
+      "Arity": -1
+    },
+    {
+      "Kind": "field",
+      "Name": "data",
+      "Qualifier": "m",
+      "Enclosing": "MemStore.Get",
+      "Line": 27,
+      "Col": 12,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "MemStore",
+      "Qualifier": "",
+      "Enclosing": "MemStore.Put",
+      "Line": 35,
+      "Col": 9,
+      "Arity": -1
+    },
+    {
+      "Kind": "field",
+      "Name": "data",
+      "Qualifier": "m",
+      "Enclosing": "MemStore.Put",
+      "Line": 36,
+      "Col": 3,
+      "Arity": -1
+    }
+  ],
+  "Imports": [
+    {
+      "Raw": "errors",
+      "Alias": "",
+      "Names": null,
+      "Line": 4
+    }
+  ],
+  "ModuleDoc": {
+    "Text": "Package store holds the storage abstractions of the fixture library.",
+    "Span": {
+      "StartByte": 0,
+      "EndByte": 71,
+      "StartLine": 1,
+      "EndLine": 1
+    }
+  },
+  "ModuleName": "store",
+  "ParseErrors": 0
+}

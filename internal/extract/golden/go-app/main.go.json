@@ -1,0 +1,138 @@
+{
+  "Symbols": [
+    {
+      "Kind": "function",
+      "Name": "main",
+      "Qualified": "main",
+      "Container": "",
+      "Span": {
+        "StartByte": 143,
+        "EndByte": 222,
+        "StartLine": 11,
+        "EndLine": 14
+      },
+      "Signature": {
+        "StartByte": 143,
+        "EndByte": 154,
+        "StartLine": 11,
+        "EndLine": 11
+      },
+      "SigText": "func main()",
+      "Visibility": "package",
+      "IsTest": false,
+      "BodyHash": "40b93ee4eded5991",
+      "Doc": null
+    },
+    {
+      "Kind": "function",
+      "Name": "run",
+      "Qualified": "run",
+      "Container": "",
+      "Span": {
+        "StartByte": 224,
+        "EndByte": 288,
+        "StartLine": 16,
+        "EndLine": 16
+      },
+      "Signature": {
+        "StartByte": 224,
+        "EndByte": 261,
+        "StartLine": 16,
+        "EndLine": 16
+      },
+      "SigText": "func run(svc *service.Service) string",
+      "Visibility": "package",
+      "IsTest": false,
+      "BodyHash": "0fb9aeda2a8ae8cb",
+      "Doc": null
+    }
+  ],
+  "References": [
+    {
+      "Kind": "call",
+      "Name": "New",
+      "Qualifier": "service",
+      "Enclosing": "main",
+      "Line": 12,
+      "Col": 16,
+      "Arity": 1
+    },
+    {
+      "Kind": "call",
+      "Name": "NewMemStore",
+      "Qualifier": "store",
+      "Enclosing": "main",
+      "Line": 12,
+      "Col": 26,
+      "Arity": 0
+    },
+    {
+      "Kind": "call",
+      "Name": "Println",
+      "Qualifier": "fmt",
+      "Enclosing": "main",
+      "Line": 13,
+      "Col": 5,
+      "Arity": 1
+    },
+    {
+      "Kind": "call",
+      "Name": "run",
+      "Qualifier": "",
+      "Enclosing": "main",
+      "Line": 13,
+      "Col": 13,
+      "Arity": 1
+    },
+    {
+      "Kind": "type",
+      "Name": "Service",
+      "Qualifier": "service",
+      "Enclosing": "run",
+      "Line": 16,
+      "Col": 22,
+      "Arity": -1
+    },
+    {
+      "Kind": "call",
+      "Name": "Lookup",
+      "Qualifier": "svc",
+      "Enclosing": "run",
+      "Line": 16,
+      "Col": 51,
+      "Arity": 1,
+      "RecvType": "service.Service"
+    }
+  ],
+  "Imports": [
+    {
+      "Raw": "fmt",
+      "Alias": "",
+      "Names": null,
+      "Line": 5
+    },
+    {
+      "Raw": "github.com/fixture/lib/service",
+      "Alias": "",
+      "Names": null,
+      "Line": 7
+    },
+    {
+      "Raw": "github.com/fixture/lib/store",
+      "Alias": "",
+      "Names": null,
+      "Line": 8
+    }
+  ],
+  "ModuleDoc": {
+    "Text": "Command app is the fixture entry point.",
+    "Span": {
+      "StartByte": 0,
+      "EndByte": 42,
+      "StartLine": 1,
+      "EndLine": 1
+    }
+  },
+  "ModuleName": "main",
+  "ParseErrors": 0
+}

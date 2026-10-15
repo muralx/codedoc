@@ -1,0 +1,43 @@
+# codedoc test suite in Docker. The source is mounted read-only at /src and
+# copied into /work by the entrypoint; Go module and build caches persist in
+# named volumes. Run through the Makefile: make docker-test, docker-lint,
+# docker-integration, docker-all, docker-shell.
+
+x-test: &test
+  build:
+    context: .
+    target: test
+  image: codedoc-test:latest
+  volumes:
+    - .:/src:ro
+    - gomod:/cache/gomod
+    - gobuild:/cache/gobuild
+
+services:
+  test:
+    <<: *test
+    command: ["make", "test"]
+
+  lint:
+    <<: *test
+    command: ["make", "lint"]
+
+  integration:
+    <<: *test
+    build:
+      context: .
+      target: model
+      args:
+        WITH_MODEL: "${WITH_MODEL:-1}"
+    image: codedoc-integration:latest
+    command: ["make", "integration"]
+
+  shell:
+    <<: *test
+    command: ["bash"]
+    stdin_open: true
+    tty: true
+
+volumes:
+  gomod:
+  gobuild:

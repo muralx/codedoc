@@ -1,0 +1,10 @@
+go-lib@0b29eeb go-app@f29d590 py-lib@35fef60
+== gaps (7)
+py-lib:src/pylib/service.py/  py py-module pylib.service  module, fan-in 0, changed 19d ago  [#1] [score 7.62] [doc:missing]
+go-lib:go:github.com/fixture/lib/store:NullStore.Get  go-lib:store/null.go:6  func (NullStore) Get(key string) (string, error)  public, fan-in 0, changed 19d ago  [#2] [score 4.50] [doc:missing]
+py-lib:py:pylib.service:Service.lookup  py-lib:src/pylib/service.py:11  def lookup(self, key: str) -> str  public, fan-in 0, changed 19d ago  [#3] [score 4.50] [doc:missing]
+py-lib:src/pylib/store.py
+  py-lib:py:pylib.store:MemStore.__init__  :32  def __init__(self)  public, fan-in 0, changed 19d ago  [#4] [score 4.50] [doc:missing]
+  py-lib:py:pylib.store:MemStore.put  :43  def put(self, key, value)  public, fan-in 0, changed 19d ago  [#5] [score 4.50] [doc:missing]
+  py-lib:py:pylib.store:mode  :51  async def mode() -> str  public, fan-in 0, changed 19d ago  [#6] [score 4.50] [doc:missing]
+go-app:go:github.com/fixture/app:main  go-app:main.go:11  func main()  package, fan-in 0, changed 19d ago  [#7] [score 2.25] [doc:missing]

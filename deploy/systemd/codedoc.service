@@ -1,0 +1,27 @@
+# codedoc daemon as a systemd user service. Install:
+#   mkdir -p ~/.config/systemd/user
+#   cp deploy/systemd/codedoc.service ~/.config/systemd/user/
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now codedoc
+# Logs: journalctl --user -u codedoc -f, and ~/.local/state/codedoc/daemon.log.
+
+[Unit]
+Description=codedoc index daemon (watches workspace repos, schedules SCIP and autodoc)
+
+[Service]
+Type=simple
+# Adjust when codedoc is installed elsewhere than go install puts it.
+ExecStart=%h/go/bin/codedoc daemon
+Restart=on-failure
+RestartSec=5
+# SIGTERM stops the daemon between indexing rounds; give it time to finish one.
+TimeoutStopSec=30
+# Scheduled autodoc runs invoke claude; give the service a PATH that finds it.
+Environment=PATH=%h/.local/bin:%h/go/bin:/usr/local/bin:/usr/bin:/bin
+# Embedding model for semantic search (nomic-embed-text-v1.5), if not set in config.yaml:
+#Environment=CODEDOC_MODEL_DIR=%h/.local/share/codedoc/models
+# Another config file:
+#Environment=CODEDOC_CONFIG=%h/.config/codedoc/config.yaml
+
+[Install]
+WantedBy=default.target

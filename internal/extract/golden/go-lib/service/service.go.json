@@ -1,0 +1,291 @@
+{
+  "Symbols": [
+    {
+      "Kind": "struct",
+      "Name": "Service",
+      "Qualified": "Service",
+      "Container": "",
+      "Span": {
+        "StartByte": 164,
+        "EndByte": 200,
+        "StartLine": 11,
+        "EndLine": 11
+      },
+      "Signature": {
+        "StartByte": 164,
+        "EndByte": 183,
+        "StartLine": 11,
+        "EndLine": 11
+      },
+      "SigText": "type Service struct",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "12725b8b904691e2",
+      "Doc": {
+        "Text": "Service answers lookups through a Store.",
+        "Span": {
+          "StartByte": 120,
+          "EndByte": 163,
+          "StartLine": 10,
+          "EndLine": 10
+        }
+      }
+    },
+    {
+      "Kind": "field",
+      "Name": "s",
+      "Qualified": "Service.s",
+      "Container": "Service",
+      "Span": {
+        "StartByte": 185,
+        "EndByte": 198,
+        "StartLine": 11,
+        "EndLine": 11
+      },
+      "Signature": {
+        "StartByte": 185,
+        "EndByte": 198,
+        "StartLine": 11,
+        "EndLine": 11
+      },
+      "SigText": "s store.Store",
+      "Visibility": "package",
+      "IsTest": false,
+      "BodyHash": "f2f2f2c2c264a2d1",
+      "Doc": null
+    },
+    {
+      "Kind": "function",
+      "Name": "New",
+      "Qualified": "New",
+      "Container": "",
+      "Span": {
+        "StartByte": 237,
+        "EndByte": 295,
+        "StartLine": 14,
+        "EndLine": 14
+      },
+      "Signature": {
+        "StartByte": 237,
+        "EndByte": 269,
+        "StartLine": 14,
+        "EndLine": 14
+      },
+      "SigText": "func New(s store.Store) *Service",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "85b67fb92725cb6b",
+      "Doc": {
+        "Text": "New wires a Service to a Store.",
+        "Span": {
+          "StartByte": 202,
+          "EndByte": 236,
+          "StartLine": 13,
+          "EndLine": 13
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "Lookup",
+      "Qualified": "Service.Lookup",
+      "Container": "Service",
+      "Span": {
+        "StartByte": 354,
+        "EndByte": 482,
+        "StartLine": 17,
+        "EndLine": 23
+      },
+      "Signature": {
+        "StartByte": 354,
+        "EndByte": 399,
+        "StartLine": 17,
+        "EndLine": 17
+      },
+      "SigText": "func (svc *Service) Lookup(key string) string",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "734d6400f19d6f32",
+      "Doc": {
+        "Text": "Lookup returns the value for key, or \"\" when missing.",
+        "Span": {
+          "StartByte": 297,
+          "EndByte": 353,
+          "StartLine": 16,
+          "EndLine": 16
+        }
+      }
+    },
+    {
+      "Kind": "function",
+      "Name": "fallback",
+      "Qualified": "fallback",
+      "Container": "",
+      "Span": {
+        "StartByte": 484,
+        "EndByte": 544,
+        "StartLine": 25,
+        "EndLine": 25
+      },
+      "Signature": {
+        "StartByte": 484,
+        "EndByte": 516,
+        "StartLine": 25,
+        "EndLine": 25
+      },
+      "SigText": "func fallback(key string) string",
+      "Visibility": "package",
+      "IsTest": false,
+      "BodyHash": "5d07a3f2e33c1250",
+      "Doc": null
+    },
+    {
+      "Kind": "function",
+      "Name": "Mode",
+      "Qualified": "Mode",
+      "Container": "",
+      "Span": {
+        "StartByte": 601,
+        "EndByte": 652,
+        "StartLine": 28,
+        "EndLine": 28
+      },
+      "Signature": {
+        "StartByte": 601,
+        "EndByte": 619,
+        "StartLine": 28,
+        "EndLine": 28
+      },
+      "SigText": "func Mode() string",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "2e27b341a53c85f0",
+      "Doc": {
+        "Text": "Mode returns the library mode from the environment.",
+        "Span": {
+          "StartByte": 546,
+          "EndByte": 600,
+          "StartLine": 27,
+          "EndLine": 27
+        }
+      }
+    }
+  ],
+  "References": [
+    {
+      "Kind": "type",
+      "Name": "Store",
+      "Qualifier": "store",
+      "Enclosing": "Service.s",
+      "Line": 11,
+      "Col": 29,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "Store",
+      "Qualifier": "store",
+      "Enclosing": "New",
+      "Line": 14,
+      "Col": 17,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "Service",
+      "Qualifier": "",
+      "Enclosing": "New",
+      "Line": 14,
+      "Col": 25,
+      "Arity": -1
+    },
+    {
+      "Kind": "instantiate",
+      "Name": "Service",
+      "Qualifier": "",
+      "Enclosing": "New",
+      "Line": 14,
+      "Col": 43,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "Service",
+      "Qualifier": "",
+      "Enclosing": "Service.Lookup",
+      "Line": 17,
+      "Col": 11,
+      "Arity": -1
+    },
+    {
+      "Kind": "call",
+      "Name": "Get",
+      "Qualifier": "svc.s",
+      "Enclosing": "Service.Lookup",
+      "Line": 18,
+      "Col": 17,
+      "Arity": 1
+    },
+    {
+      "Kind": "field",
+      "Name": "s",
+      "Qualifier": "svc",
+      "Enclosing": "Service.Lookup",
+      "Line": 18,
+      "Col": 15,
+      "Arity": -1
+    },
+    {
+      "Kind": "call",
+      "Name": "fallback",
+      "Qualifier": "",
+      "Enclosing": "Service.Lookup",
+      "Line": 20,
+      "Col": 9,
+      "Arity": 1
+    },
+    {
+      "Kind": "call",
+      "Name": "Getenv",
+      "Qualifier": "os",
+      "Enclosing": "Mode",
+      "Line": 28,
+      "Col": 31,
+      "Arity": 1
+    },
+    {
+      "Kind": "config",
+      "Name": "LIB_MODE",
+      "Qualifier": "accessor",
+      "Enclosing": "Mode",
+      "Line": 28,
+      "Col": 38,
+      "Arity": -1
+    }
+  ],
+  "Imports": [
+    {
+      "Raw": "os",
+      "Alias": "",
+      "Names": null,
+      "Line": 5
+    },
+    {
+      "Raw": "github.com/fixture/lib/store",
+      "Alias": "",
+      "Names": null,
+      "Line": 7
+    }
+  ],
+  "ModuleDoc": {
+    "Text": "Package service exposes the fixture's use cases.",
+    "Span": {
+      "StartByte": 0,
+      "EndByte": 51,
+      "StartLine": 1,
+      "EndLine": 1
+    }
+  },
+  "ModuleName": "service",
+  "ParseErrors": 0
+}

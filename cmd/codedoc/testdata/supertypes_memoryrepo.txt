@@ -1,0 +1,3 @@
+ts-domain@43abdcd
+== supertypes of MemoryRepo (1)
+EnvironmentRepo  src/records.ts:11  export interface EnvironmentRepo {

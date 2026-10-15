@@ -1,0 +1,43 @@
+6 repos (go-lib@0b29eeb +5)
+== repos (6)
+go-lib  main@0b29eeb dirty:0 files:8 symbols:24
+go-app  main@f29d590 dirty:0 files:2 symbols:2
+ts-domain  main@43abdcd dirty:0 files:5 symbols:13
+py-lib  main@35fef60 dirty:0 files:5 symbols:22
+java-lib  main@6be3ec0 dirty:0 files:6 symbols:27
+cfg-repo  main@41d66d8 dirty:0 files:9 symbols:0
+== readme headings (1)
+cfg-repo:README.md  # cfg-repo
+== entry points (4)
+main  go-app:main.go:11-14  func main()  [main]
+go-app:main.go  entry file
+go-app:./  package main, 1 file
+ts-domain:src/index.ts  entry file
+== doc coverage (6)
+go-lib  symbols ok:16 stale:0 missing:7  modules ok:2 missing:0
+go-app  symbols ok:0 stale:0 missing:2  modules ok:1 missing:0
+ts-domain  symbols ok:6 stale:0 missing:6  modules ok:1 missing:1
+py-lib  symbols ok:7 stale:0 missing:13  modules ok:2 missing:3
+java-lib  symbols ok:9 stale:0 missing:17  modules ok:1 missing:2
+cfg-repo  symbols ok:0 stale:0 missing:0  modules ok:0 missing:0
+== recent commits (6)
+0b29eeb  go-lib 2026-01-01 fixture  fixture: initial
+f29d590  go-app 2026-01-01 fixture  fixture: initial
+43abdcd  ts-domain 2026-01-01 fixture  fixture: initial
+35fef60  py-lib 2026-01-01 fixture  fixture: initial
+6be3ec0  java-lib 2026-01-01 fixture  fixture: initial
+41d66d8  cfg-repo 2026-01-01 fixture  fixture: initial
+== modules (13)
+github.com/fixture/lib/service  go-lib:service  go go-package, 3 files, 51 lines  Package service exposes the fixture's use cases.
+github.com/fixture/lib/store  go-lib:store  go go-package, 4 files, 61 lines  Package store persists the fixture's key-value data.
+github.com/fixture/app  go-app:.  go go-package, 1 file, 16 lines  Command app is the fixture entry point.
+@fixture/domain  ts-domain:.  ts npm-package, 3 files, 43 lines
+  @fixture/domain/src  ts-domain:src  ts npm-dir, 3 files, 43 lines  Record types and repositories of the fixture domain.
+pylib  py-lib:src/pylib  py py-package, 3 files, 75 lines  Fixture library for Python.
+  pylib.service  py-lib:src/pylib/service.py  py py-module, 1 file, 20 lines
+  pylib.store  py-lib:src/pylib/store.py  py py-module, 1 file, 52 lines  Key-value stores of the Python fixture.
+tests  py-lib:tests  py py-package, 1 file, 15 lines
+  tests.test_store  py-lib:tests/test_store.py  py py-module, 1 file, 15 lines
+com.fixture.service  java-lib:src/main/java/com/fixture/service  java java-package, 1 file, 39 lines
+com.fixture.store  java-lib:src/main/java/com/fixture/store  java java-package, 3 files, 60 lines  Storage abstractions of the Java fixture.
+com.fixture.store  java-lib:src/test/java/com/fixture/store  java java-package, 1 file, 16 lines

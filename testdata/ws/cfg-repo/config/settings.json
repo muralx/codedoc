@@ -1,0 +1,7 @@
+{
+  "LIB_MODE": "prod",
+  "service": {
+    "endpoint": "${API_URL}",
+    "retries": 3
+  }
+}

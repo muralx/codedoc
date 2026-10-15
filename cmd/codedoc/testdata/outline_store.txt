@@ -1,0 +1,8 @@
+go-lib@0b29eeb
+== store/store.go, 38 lines (6)
+ErrMissing  :7  var ErrMissing = errors.New("missing")  ErrMissing is returned when a key has no value.
+Store  :10-15  type Store interface  Store persists string values by key.  [+2 members]
+MemStore  :18-20  type MemStore struct  MemStore is an in-memory Store.  [+1 member]
+NewMemStore  :23  func NewMemStore() *MemStore  NewMemStore creates an empty MemStore.
+MemStore.Get  :26-32  func (m *MemStore) Get(key string) (string, error)  Get implements Store.
+MemStore.Put  :35-38  func (m *MemStore) Put(key, value string) error  Put implements Store.

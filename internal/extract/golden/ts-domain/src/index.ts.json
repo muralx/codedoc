@@ -1,0 +1,24 @@
+{
+  "Symbols": null,
+  "References": null,
+  "Imports": [
+    {
+      "Raw": "./records.js",
+      "Alias": "",
+      "Names": null,
+      "Line": 3,
+      "Reexport": true
+    }
+  ],
+  "ModuleDoc": {
+    "Text": "Domain records of the TypeScript fixture.",
+    "Span": {
+      "StartByte": 0,
+      "EndByte": 48,
+      "StartLine": 1,
+      "EndLine": 1
+    }
+  },
+  "ModuleName": "",
+  "ParseErrors": 0
+}

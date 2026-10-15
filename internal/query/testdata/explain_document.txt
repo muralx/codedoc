@@ -1,0 +1,15 @@
+doc-repo@0203c37
+== explain doc-repo:docs/design.md (1)
+design.md  docs/design.md:1-63  Store design  How the store package keeps records, and how delivery retries work.
+== headings (11)
+10-13  ## 1. Goals  4 lines
+15-35  ## 2. Model  21 lines
+  19-27  ### 2.1 Keys  9 lines
+  29-35  ### 2.2 Values  7 lines
+    33-35  #### Notes  3 lines
+37-53  ## 6. Delivery  17 lines
+  42-44  ### 6.1 Ordering  3 lines
+  46-53  ### 6.2 Retries  8 lines
+    51-53  #### Notes  3 lines
+55-58  Open questions  4 lines
+60-63  Appendix  4 lines

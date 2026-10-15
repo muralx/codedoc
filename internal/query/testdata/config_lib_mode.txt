@@ -1,0 +1,9 @@
+go-lib@0b29eeb cfg-repo@41d66d8
+== defines LIB_MODE (2)
+cfg-repo:.env:2  env  dev
+cfg-repo:config/settings.json:2  json  prod
+== references LIB_MODE (2)
+cfg-repo:.env:4  env
+cfg-repo:scripts/setup.sh:5  shell
+== reads LIB_MODE (1)
+Mode  go-lib:service/service.go:28  func Mode() string  Mode returns the library mode from the environment.

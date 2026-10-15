@@ -1,0 +1,162 @@
+{
+  "Symbols": [
+    {
+      "Kind": "struct",
+      "Name": "Cache",
+      "Qualified": "Cache",
+      "Container": "",
+      "Span": {
+        "StartByte": 60,
+        "EndByte": 106,
+        "StartLine": 4,
+        "EndLine": 6
+      },
+      "Signature": {
+        "StartByte": 60,
+        "EndByte": 77,
+        "StartLine": 4,
+        "EndLine": 4
+      },
+      "SigText": "type Cache struct",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "56db6fb42f8e3c8e",
+      "Doc": {
+        "Text": "Cache keeps looked-up values in memory.",
+        "Span": {
+          "StartByte": 17,
+          "EndByte": 59,
+          "StartLine": 3,
+          "EndLine": 3
+        }
+      }
+    },
+    {
+      "Kind": "field",
+      "Name": "items",
+      "Qualified": "Cache.items",
+      "Container": "Cache",
+      "Span": {
+        "StartByte": 81,
+        "EndByte": 104,
+        "StartLine": 5,
+        "EndLine": 5
+      },
+      "Signature": {
+        "StartByte": 81,
+        "EndByte": 104,
+        "StartLine": 5,
+        "EndLine": 5
+      },
+      "SigText": "items map[string]string",
+      "Visibility": "package",
+      "IsTest": false,
+      "BodyHash": "9bafa6b04beceaf5",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "Get",
+      "Qualified": "Cache.Get",
+      "Container": "Cache",
+      "Span": {
+        "StartByte": 149,
+        "EndByte": 236,
+        "StartLine": 9,
+        "EndLine": 12
+      },
+      "Signature": {
+        "StartByte": 149,
+        "EndByte": 195,
+        "StartLine": 9,
+        "EndLine": 9
+      },
+      "SigText": "func (c *Cache) Get(key string) (string, bool)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "64f4ca9a77904295",
+      "Doc": {
+        "Text": "Get returns the cached value for key.",
+        "Span": {
+          "StartByte": 108,
+          "EndByte": 148,
+          "StartLine": 8,
+          "EndLine": 8
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "Has",
+      "Qualified": "Cache.Has",
+      "Container": "Cache",
+      "Span": {
+        "StartByte": 276,
+        "EndByte": 348,
+        "StartLine": 15,
+        "EndLine": 18
+      },
+      "Signature": {
+        "StartByte": 276,
+        "EndByte": 312,
+        "StartLine": 15,
+        "EndLine": 15
+      },
+      "SigText": "func (c *Cache) Has(key string) bool",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "e6f657a721d292e1",
+      "Doc": {
+        "Text": "Has reports whether key is cached.",
+        "Span": {
+          "StartByte": 238,
+          "EndByte": 275,
+          "StartLine": 14,
+          "EndLine": 14
+        }
+      }
+    }
+  ],
+  "References": [
+    {
+      "Kind": "type",
+      "Name": "Cache",
+      "Qualifier": "",
+      "Enclosing": "Cache.Get",
+      "Line": 9,
+      "Col": 9,
+      "Arity": -1
+    },
+    {
+      "Kind": "field",
+      "Name": "items",
+      "Qualifier": "c",
+      "Enclosing": "Cache.Get",
+      "Line": 10,
+      "Col": 12,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "Cache",
+      "Qualifier": "",
+      "Enclosing": "Cache.Has",
+      "Line": 15,
+      "Col": 9,
+      "Arity": -1
+    },
+    {
+      "Kind": "call",
+      "Name": "Get",
+      "Qualifier": "c",
+      "Enclosing": "Cache.Has",
+      "Line": 16,
+      "Col": 12,
+      "Arity": 1
+    }
+  ],
+  "Imports": null,
+  "ModuleDoc": null,
+  "ModuleName": "service",
+  "ParseErrors": 0
+}

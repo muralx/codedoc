@@ -1,0 +1,4 @@
+go-lib@0b29eeb go-app@f29d590
+== dependents of github.com/fixture/lib/store (2)
+github.com/fixture/app  go-app:.  go go-package  [cross-repo]
+github.com/fixture/lib/service  go-lib:service  go go-package

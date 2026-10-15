@@ -1,0 +1,10 @@
+codedoc
+Copyright 2026 Diego Belfer
+
+This product is licensed under the Apache License, Version 2.0
+(see LICENSE).
+
+The source tree does not bundle third-party code. Its Go dependencies
+are listed in go.mod and keep their own licenses. The embedding model
+(nomic-embed-text-v1.5, Apache License 2.0) and ONNX Runtime (MIT) are
+downloaded separately and are not part of this repository.

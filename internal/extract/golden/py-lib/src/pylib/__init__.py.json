@@ -1,0 +1,26 @@
+{
+  "Symbols": null,
+  "References": null,
+  "Imports": [
+    {
+      "Raw": ".store",
+      "Alias": "",
+      "Names": [
+        "MemStore",
+        "Store"
+      ],
+      "Line": 3
+    }
+  ],
+  "ModuleDoc": {
+    "Text": "Fixture library for Python.",
+    "Span": {
+      "StartByte": 0,
+      "EndByte": 33,
+      "StartLine": 1,
+      "EndLine": 1
+    }
+  },
+  "ModuleName": "",
+  "ParseErrors": 0
+}

@@ -1,0 +1,8 @@
+version: "2"
+linters:
+  enable: [errcheck, govet, staticcheck, unused, revive, gocyclo, funlen]
+  settings:
+    funlen: {lines: 40, statements: 30}
+    gocyclo: {min-complexity: 12}
+run:
+  build-tags: [sqlite_fts5]

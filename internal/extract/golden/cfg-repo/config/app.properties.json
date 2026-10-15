@@ -1,0 +1,35 @@
+{
+  "Format": "properties",
+  "Defs": [
+    {
+      "Key": "lib.mode",
+      "Line": 2,
+      "Preview": "dev"
+    },
+    {
+      "Key": "api.url",
+      "Line": 3,
+      "Preview": "${API_URL}"
+    },
+    {
+      "Key": "db.password",
+      "Line": 4,
+      "Preview": "***"
+    },
+    {
+      "Key": "java.opts",
+      "Line": 5,
+      "Preview": "-Xmx512m -Dhome=${JAVALIB_HOME}"
+    }
+  ],
+  "Refs": [
+    {
+      "Key": "API_URL",
+      "Line": 3
+    },
+    {
+      "Key": "JAVALIB_HOME",
+      "Line": 6
+    }
+  ]
+}

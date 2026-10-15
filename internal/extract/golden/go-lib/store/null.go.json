@@ -1,0 +1,105 @@
+{
+  "Symbols": [
+    {
+      "Kind": "struct",
+      "Name": "NullStore",
+      "Qualified": "NullStore",
+      "Container": "",
+      "Span": {
+        "StartByte": 59,
+        "EndByte": 82,
+        "StartLine": 4,
+        "EndLine": 4
+      },
+      "Signature": {
+        "StartByte": 59,
+        "EndByte": 80,
+        "StartLine": 4,
+        "EndLine": 4
+      },
+      "SigText": "type NullStore struct",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "d3db4cd745f03dae",
+      "Doc": {
+        "Text": "NullStore is a Store that keeps nothing.",
+        "Span": {
+          "StartByte": 15,
+          "EndByte": 58,
+          "StartLine": 3,
+          "EndLine": 3
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "Get",
+      "Qualified": "NullStore.Get",
+      "Container": "NullStore",
+      "Span": {
+        "StartByte": 84,
+        "EndByte": 158,
+        "StartLine": 6,
+        "EndLine": 6
+      },
+      "Signature": {
+        "StartByte": 84,
+        "EndByte": 132,
+        "StartLine": 6,
+        "EndLine": 6
+      },
+      "SigText": "func (NullStore) Get(key string) (string, error)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "237db948d248db79",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "Put",
+      "Qualified": "NullStore.Put",
+      "Container": "NullStore",
+      "Span": {
+        "StartByte": 160,
+        "EndByte": 220,
+        "StartLine": 8,
+        "EndLine": 8
+      },
+      "Signature": {
+        "StartByte": 160,
+        "EndByte": 205,
+        "StartLine": 8,
+        "EndLine": 8
+      },
+      "SigText": "func (NullStore) Put(key, value string) error",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "a00b7b0acb7a1d8b",
+      "Doc": null
+    }
+  ],
+  "References": [
+    {
+      "Kind": "type",
+      "Name": "NullStore",
+      "Qualifier": "",
+      "Enclosing": "NullStore.Get",
+      "Line": 6,
+      "Col": 6,
+      "Arity": -1
+    },
+    {
+      "Kind": "type",
+      "Name": "NullStore",
+      "Qualifier": "",
+      "Enclosing": "NullStore.Put",
+      "Line": 8,
+      "Col": 6,
+      "Arity": -1
+    }
+  ],
+  "Imports": null,
+  "ModuleDoc": null,
+  "ModuleName": "store",
+  "ParseErrors": 0
+}

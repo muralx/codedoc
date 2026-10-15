@@ -1,0 +1,10 @@
+doc-repo@0203c37
+6.2 Retries  docs/design.md:46-53
+46	### 6.2 Retries
+47	
+48	A failed delivery is retried three times. Details are in the
+49	[retry runbook](runbooks/retries.md#backoff).
+50	
+51	#### Notes
+52	
+53	Retries back off exponentially.

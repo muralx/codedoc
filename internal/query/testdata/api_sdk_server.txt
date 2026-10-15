@@ -1,0 +1,11 @@
+deps-app@2570b72 deps-go@fc1219f
+Server  <deps-app>/node_modules/@acme/sdk/dist/server/index.d.ts:8-14  export declare class Server extends Protocol  An Acme server on top of a pluggable transport.  [dep @acme/sdk@1.2.0] [from @acme/sdk/server]
+== members of Server (6)
+dist/server/index.d.ts
+  constructor  :10  (name: string)
+  connect  :12  (transport: Transport): Promise<Result>  Attaches the server to a transport.
+  onClose  :13  protected (): void
+dist/shared/protocol.d.ts
+  Protocol.notification  :9  (notification: Notification): Promise<void>  Sends a notification to the other side.
+  Protocol.close  :11  (): Promise<void>  Closes the connection.
+  Protocol.revision  :13  static (): string  The protocol revision an endpoint class speaks.

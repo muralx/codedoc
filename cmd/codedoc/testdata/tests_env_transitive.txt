@@ -1,0 +1,3 @@
+ts-domain@43abdcd
+== tests of Environment (1)
+it:stores and checks an environment  src/records.test.ts:6  it('stores and checks an environment', () => {  via MemoryRepo.load  [test]

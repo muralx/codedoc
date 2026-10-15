@@ -1,0 +1,212 @@
+{
+  "Symbols": [
+    {
+      "Kind": "class",
+      "Name": "Service",
+      "Qualified": "Service",
+      "Container": "",
+      "Span": {
+        "StartByte": 63,
+        "EndByte": 343,
+        "StartLine": 5,
+        "EndLine": 15
+      },
+      "Signature": {
+        "StartByte": 63,
+        "EndByte": 76,
+        "StartLine": 5,
+        "EndLine": 5
+      },
+      "SigText": "class Service",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "6036effcea30a011",
+      "Doc": {
+        "Text": "Service looks keys up in a store.",
+        "Span": {
+          "StartByte": 82,
+          "EndByte": 121,
+          "StartLine": 6,
+          "EndLine": 6
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "__init__",
+      "Qualified": "Service.__init__",
+      "Container": "Service",
+      "Span": {
+        "StartByte": 127,
+        "EndByte": 187,
+        "StartLine": 8,
+        "EndLine": 9
+      },
+      "Signature": {
+        "StartByte": 127,
+        "EndByte": 159,
+        "StartLine": 8,
+        "EndLine": 8
+      },
+      "SigText": "def __init__(self, store: Store)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "8604b0e76eae9e89",
+      "Doc": null
+    },
+    {
+      "Kind": "field",
+      "Name": "store",
+      "Qualified": "Service.store",
+      "Container": "Service",
+      "Span": {
+        "StartByte": 169,
+        "EndByte": 187,
+        "StartLine": 9,
+        "EndLine": 9
+      },
+      "Signature": {
+        "StartByte": 169,
+        "EndByte": 187,
+        "StartLine": 9,
+        "EndLine": 9
+      },
+      "SigText": "self.store = store",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "1967a5f0bccdd8a4",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "lookup",
+      "Qualified": "Service.lookup",
+      "Container": "Service",
+      "Span": {
+        "StartByte": 193,
+        "EndByte": 343,
+        "StartLine": 11,
+        "EndLine": 15
+      },
+      "Signature": {
+        "StartByte": 193,
+        "EndByte": 226,
+        "StartLine": 11,
+        "EndLine": 11
+      },
+      "SigText": "def lookup(self, key: str) -\u003e str",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "422ec884ed98c6d9",
+      "Doc": null
+    },
+    {
+      "Kind": "function",
+      "Name": "fallback",
+      "Qualified": "fallback",
+      "Container": "",
+      "Span": {
+        "StartByte": 346,
+        "EndByte": 443,
+        "StartLine": 18,
+        "EndLine": 20
+      },
+      "Signature": {
+        "StartByte": 346,
+        "EndByte": 363,
+        "StartLine": 18,
+        "EndLine": 18
+      },
+      "SigText": "def fallback(key)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "aa50aef4517e9d65",
+      "Doc": {
+        "Text": "Return the default value for key.",
+        "Span": {
+          "StartByte": 369,
+          "EndByte": 408,
+          "StartLine": 19,
+          "EndLine": 19
+        }
+      }
+    }
+  ],
+  "References": [
+    {
+      "Kind": "type",
+      "Name": "Store",
+      "Qualifier": "",
+      "Enclosing": "Service.__init__",
+      "Line": 8,
+      "Col": 30,
+      "Arity": -1
+    },
+    {
+      "Kind": "field",
+      "Name": "store",
+      "Qualifier": "self",
+      "Enclosing": "Service.__init__",
+      "Line": 9,
+      "Col": 13,
+      "Arity": -1
+    },
+    {
+      "Kind": "call",
+      "Name": "get",
+      "Qualifier": "self.store",
+      "Enclosing": "Service.lookup",
+      "Line": 12,
+      "Col": 27,
+      "Arity": 1
+    },
+    {
+      "Kind": "field",
+      "Name": "store",
+      "Qualifier": "self",
+      "Enclosing": "Service.lookup",
+      "Line": 12,
+      "Col": 21,
+      "Arity": -1
+    },
+    {
+      "Kind": "call",
+      "Name": "fallback",
+      "Qualifier": "",
+      "Enclosing": "Service.lookup",
+      "Line": 14,
+      "Col": 19,
+      "Arity": 1
+    },
+    {
+      "Kind": "field",
+      "Name": "DEFAULT_TIMEOUT",
+      "Qualifier": "backend",
+      "Enclosing": "fallback",
+      "Line": 20,
+      "Col": 19,
+      "Arity": -1
+    }
+  ],
+  "Imports": [
+    {
+      "Raw": "pylib.store",
+      "Alias": "",
+      "Names": [
+        "Store"
+      ],
+      "Line": 1
+    },
+    {
+      "Raw": ".",
+      "Alias": "",
+      "Names": [
+        "store=backend"
+      ],
+      "Line": 2
+    }
+  ],
+  "ModuleDoc": null,
+  "ModuleName": "",
+  "ParseErrors": 0
+}

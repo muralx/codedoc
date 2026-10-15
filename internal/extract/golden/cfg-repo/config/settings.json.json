@@ -1,0 +1,26 @@
+{
+  "Format": "json",
+  "Defs": [
+    {
+      "Key": "LIB_MODE",
+      "Line": 2,
+      "Preview": "prod"
+    },
+    {
+      "Key": "service.endpoint",
+      "Line": 4,
+      "Preview": "${API_URL}"
+    },
+    {
+      "Key": "service.retries",
+      "Line": 5,
+      "Preview": "3"
+    }
+  ],
+  "Refs": [
+    {
+      "Key": "API_URL",
+      "Line": 4
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "Symbols": null,
+  "References": null,
+  "Imports": null,
+  "ModuleDoc": {
+    "Text": "Package store persists the fixture's key-value data.",
+    "Span": {
+      "StartByte": 0,
+      "EndByte": 55,
+      "StartLine": 1,
+      "EndLine": 1
+    }
+  },
+  "ModuleName": "store",
+  "ParseErrors": 0
+}

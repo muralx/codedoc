@@ -1,0 +1,10 @@
+go-lib@0b29eeb
+Store.Get  store/store.go:12  Get(key string) (string, error)  Get returns the value for key.
+== callers (1)
+Service.Lookup  service/service.go:18  v, err := svc.s.Get(key)
+== implemented or overridden by (2)
+NullStore.Get  store/null.go:6  func (NullStore) Get(key string) (string, error)
+MemStore.Get  store/store.go:26  func (m *MemStore) Get(key string) (string, error)
+== mentions in documents and doc comments (1)
+MemStore.Get  store/store.go:25  // Get implements Store.
+exported  yes (public member of Store)  no other repo of the workspace uses it

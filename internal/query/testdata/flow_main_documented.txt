@@ -1,0 +1,7 @@
+go-lib@0b29eeb go-app@f29d590
+== flow from main (5)
+main  go-app:main.go:11-14  func main()
+  New  go-lib:service/service.go:14  func New(s store.Store) *Service — New wires a Service to a Store.
+  NewMemStore  go-lib:store/store.go:23  func NewMemStore() *MemStore — NewMemStore creates an empty MemStore.
+  Service.Lookup  go-lib:service/service.go:17-23  func (svc *Service) Lookup(key string) string — Lookup returns the value for key, or "" when missing.
+    Store.Get  go-lib:store/store.go:12  Get(key string) (string, error) — Get returns the value for key.

@@ -1,0 +1,496 @@
+{
+  "Symbols": [
+    {
+      "Kind": "const",
+      "Name": "DEFAULT_TIMEOUT",
+      "Qualified": "DEFAULT_TIMEOUT",
+      "Container": "",
+      "Span": {
+        "StartByte": 112,
+        "EndByte": 132,
+        "StartLine": 9,
+        "EndLine": 9
+      },
+      "Signature": {
+        "StartByte": 112,
+        "EndByte": 132,
+        "StartLine": 9,
+        "EndLine": 9
+      },
+      "SigText": "DEFAULT_TIMEOUT = 30",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "27707087125524b7",
+      "Doc": null
+    },
+    {
+      "Kind": "var",
+      "Name": "_registry",
+      "Qualified": "_registry",
+      "Container": "",
+      "Span": {
+        "StartByte": 133,
+        "EndByte": 147,
+        "StartLine": 10,
+        "EndLine": 10
+      },
+      "Signature": {
+        "StartByte": 133,
+        "EndByte": 147,
+        "StartLine": 10,
+        "EndLine": 10
+      },
+      "SigText": "_registry = {}",
+      "Visibility": "package",
+      "IsTest": false,
+      "BodyHash": "a8a184ccbb3b7c09",
+      "Doc": null
+    },
+    {
+      "Kind": "class",
+      "Name": "Store",
+      "Qualified": "Store",
+      "Container": "",
+      "Span": {
+        "StartByte": 150,
+        "EndByte": 400,
+        "StartLine": 13,
+        "EndLine": 22
+      },
+      "Signature": {
+        "StartByte": 150,
+        "EndByte": 170,
+        "StartLine": 13,
+        "EndLine": 13
+      },
+      "SigText": "class Store(abc.ABC)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "0d9f8162a96c6aeb",
+      "Doc": {
+        "Text": "Store is a key-value store.",
+        "Span": {
+          "StartByte": 176,
+          "EndByte": 209,
+          "StartLine": 14,
+          "EndLine": 14
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "get",
+      "Qualified": "Store.get",
+      "Container": "Store",
+      "Span": {
+        "StartByte": 215,
+        "EndByte": 307,
+        "StartLine": 16,
+        "EndLine": 18
+      },
+      "Signature": {
+        "StartByte": 239,
+        "EndByte": 257,
+        "StartLine": 17,
+        "EndLine": 17
+      },
+      "SigText": "def get(self, key)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "3e3b568cb0f826b6",
+      "Doc": {
+        "Text": "Return the value stored under key.",
+        "Span": {
+          "StartByte": 267,
+          "EndByte": 307,
+          "StartLine": 18,
+          "EndLine": 18
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "put",
+      "Qualified": "Store.put",
+      "Container": "Store",
+      "Span": {
+        "StartByte": 313,
+        "EndByte": 400,
+        "StartLine": 20,
+        "EndLine": 22
+      },
+      "Signature": {
+        "StartByte": 337,
+        "EndByte": 362,
+        "StartLine": 21,
+        "EndLine": 21
+      },
+      "SigText": "def put(self, key, value)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "8dd2350388d821e8",
+      "Doc": {
+        "Text": "Store value under key.",
+        "Span": {
+          "StartByte": 372,
+          "EndByte": 400,
+          "StartLine": 22,
+          "EndLine": 22
+        }
+      }
+    },
+    {
+      "Kind": "class",
+      "Name": "MemStore",
+      "Qualified": "MemStore",
+      "Container": "",
+      "Span": {
+        "StartByte": 403,
+        "EndByte": 892,
+        "StartLine": 25,
+        "EndLine": 44
+      },
+      "Signature": {
+        "StartByte": 403,
+        "EndByte": 424,
+        "StartLine": 25,
+        "EndLine": 25
+      },
+      "SigText": "class MemStore(Store)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "6679e229ab418464",
+      "Doc": {
+        "Text": "MemStore keeps values in memory.\n\nValues live in a dict:\n    indented lines keep their relative indent.",
+        "Span": {
+          "StartByte": 430,
+          "EndByte": 552,
+          "StartLine": 26,
+          "EndLine": 30
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "__init__",
+      "Qualified": "MemStore.__init__",
+      "Container": "MemStore",
+      "Span": {
+        "StartByte": 558,
+        "EndByte": 651,
+        "StartLine": 32,
+        "EndLine": 35
+      },
+      "Signature": {
+        "StartByte": 558,
+        "EndByte": 576,
+        "StartLine": 32,
+        "EndLine": 32
+      },
+      "SigText": "def __init__(self)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "212ee85e4df57fc8",
+      "Doc": null
+    },
+    {
+      "Kind": "field",
+      "Name": "data",
+      "Qualified": "MemStore.data",
+      "Container": "MemStore",
+      "Span": {
+        "StartByte": 586,
+        "EndByte": 600,
+        "StartLine": 33,
+        "EndLine": 33
+      },
+      "Signature": {
+        "StartByte": 586,
+        "EndByte": 600,
+        "StartLine": 33,
+        "EndLine": 33
+      },
+      "SigText": "self.data = {}",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "138dd10d7878d273",
+      "Doc": null
+    },
+    {
+      "Kind": "field",
+      "Name": "__hits",
+      "Qualified": "MemStore.__hits",
+      "Container": "MemStore",
+      "Span": {
+        "StartByte": 609,
+        "EndByte": 624,
+        "StartLine": 34,
+        "EndLine": 34
+      },
+      "Signature": {
+        "StartByte": 609,
+        "EndByte": 624,
+        "StartLine": 34,
+        "EndLine": 34
+      },
+      "SigText": "self.__hits = 0",
+      "Visibility": "private",
+      "IsTest": false,
+      "BodyHash": "2ce84273d322d6ac",
+      "Doc": null
+    },
+    {
+      "Kind": "method",
+      "Name": "get",
+      "Qualified": "MemStore.get",
+      "Container": "MemStore",
+      "Span": {
+        "StartByte": 657,
+        "EndByte": 829,
+        "StartLine": 37,
+        "EndLine": 41
+      },
+      "Signature": {
+        "StartByte": 657,
+        "EndByte": 675,
+        "StartLine": 37,
+        "EndLine": 37
+      },
+      "SigText": "def get(self, key)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "31a4b34adf99bb72",
+      "Doc": {
+        "Text": "Return the value for key or raise KeyError.",
+        "Span": {
+          "StartByte": 685,
+          "EndByte": 734,
+          "StartLine": 38,
+          "EndLine": 38
+        }
+      }
+    },
+    {
+      "Kind": "method",
+      "Name": "put",
+      "Qualified": "MemStore.put",
+      "Container": "MemStore",
+      "Span": {
+        "StartByte": 835,
+        "EndByte": 892,
+        "StartLine": 43,
+        "EndLine": 44
+      },
+      "Signature": {
+        "StartByte": 835,
+        "EndByte": 860,
+        "StartLine": 43,
+        "EndLine": 43
+      },
+      "SigText": "def put(self, key, value)",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "e55e961fe1a7cf9d",
+      "Doc": null
+    },
+    {
+      "Kind": "function",
+      "Name": "_missing",
+      "Qualified": "_missing",
+      "Container": "",
+      "Span": {
+        "StartByte": 895,
+        "EndByte": 938,
+        "StartLine": 47,
+        "EndLine": 48
+      },
+      "Signature": {
+        "StartByte": 895,
+        "EndByte": 912,
+        "StartLine": 47,
+        "EndLine": 47
+      },
+      "SigText": "def _missing(key)",
+      "Visibility": "package",
+      "IsTest": false,
+      "BodyHash": "ae653897cffb6ce7",
+      "Doc": null
+    },
+    {
+      "Kind": "function",
+      "Name": "mode",
+      "Qualified": "mode",
+      "Container": "",
+      "Span": {
+        "StartByte": 941,
+        "EndByte": 1012,
+        "StartLine": 51,
+        "EndLine": 52
+      },
+      "Signature": {
+        "StartByte": 941,
+        "EndByte": 964,
+        "StartLine": 51,
+        "EndLine": 51
+      },
+      "SigText": "async def mode() -\u003e str",
+      "Visibility": "public",
+      "IsTest": false,
+      "BodyHash": "3c83303790ab80fc",
+      "Doc": null
+    }
+  ],
+  "References": [
+    {
+      "Kind": "extend",
+      "Name": "ABC",
+      "Qualifier": "abc",
+      "Enclosing": "Store",
+      "Line": 13,
+      "Col": 16,
+      "Arity": -1
+    },
+    {
+      "Kind": "call",
+      "Name": "abstractmethod",
+      "Qualifier": "abc",
+      "Enclosing": "Store.get",
+      "Line": 16,
+      "Col": 9,
+      "Arity": 1
+    },
+    {
+      "Kind": "call",
+      "Name": "abstractmethod",
+      "Qualifier": "abc",
+      "Enclosing": "Store.put",
+      "Line": 20,
+      "Col": 9,
+      "Arity": 1
+    },
+    {
+      "Kind": "extend",
+      "Name": "Store",
+      "Qualifier": "",
+      "Enclosing": "MemStore",
+      "Line": 25,
+      "Col": 15,
+      "Arity": -1
+    },
+    {
+      "Kind": "field",
+      "Name": "data",
+      "Qualifier": "self",
+      "Enclosing": "MemStore.__init__",
+      "Line": 33,
+      "Col": 13,
+      "Arity": -1
+    },
+    {
+      "Kind": "field",
+      "Name": "__hits",
+      "Qualifier": "self",
+      "Enclosing": "MemStore.__init__",
+      "Line": 34,
+      "Col": 13,
+      "Arity": -1
+    },
+    {
+      "Kind": "field",
+      "Name": "data",
+      "Qualifier": "self",
+      "Enclosing": "MemStore.__init__",
+      "Line": 35,
+      "Col": 13,
+      "Arity": -1
+    },
+    {
+      "Kind": "field",
+      "Name": "data",
+      "Qualifier": "self",
+      "Enclosing": "MemStore.get",
+      "Line": 39,
+      "Col": 27,
+      "Arity": -1
+    },
+    {
+      "Kind": "call",
+      "Name": "_missing",
+      "Qualifier": "",
+      "Enclosing": "MemStore.get",
+      "Line": 40,
+      "Col": 18,
+      "Arity": 1
+    },
+    {
+      "Kind": "field",
+      "Name": "data",
+      "Qualifier": "self",
+      "Enclosing": "MemStore.get",
+      "Line": 41,
+      "Col": 20,
+      "Arity": -1
+    },
+    {
+      "Kind": "field",
+      "Name": "data",
+      "Qualifier": "self",
+      "Enclosing": "MemStore.put",
+      "Line": 44,
+      "Col": 13,
+      "Arity": -1
+    },
+    {
+      "Kind": "call",
+      "Name": "get",
+      "Qualifier": "os.environ",
+      "Enclosing": "mode",
+      "Line": 52,
+      "Col": 22,
+      "Arity": 2
+    },
+    {
+      "Kind": "config",
+      "Name": "PYLIB_MODE",
+      "Qualifier": "accessor",
+      "Enclosing": "mode",
+      "Line": 52,
+      "Col": 26,
+      "Arity": -1
+    },
+    {
+      "Kind": "field",
+      "Name": "environ",
+      "Qualifier": "os",
+      "Enclosing": "mode",
+      "Line": 52,
+      "Col": 14,
+      "Arity": -1
+    }
+  ],
+  "Imports": [
+    {
+      "Raw": "abc",
+      "Alias": "",
+      "Names": null,
+      "Line": 6
+    },
+    {
+      "Raw": "os",
+      "Alias": "",
+      "Names": null,
+      "Line": 7
+    }
+  ],
+  "ModuleDoc": {
+    "Text": "Key-value stores of the Python fixture.\n\nTwo implementations share one interface.",
+    "Span": {
+      "StartByte": 0,
+      "EndByte": 88,
+      "StartLine": 1,
+      "EndLine": 4
+    }
+  },
+  "ModuleName": "",
+  "ParseErrors": 0
+}

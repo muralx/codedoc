@@ -1,0 +1,8 @@
+{
+  "name": "@fixture/web",
+  "version": "0.0.0",
+  "dependencies": {
+    "@acme/sdk": "^1.2.0",
+    "dup": "^1.0.0"
+  }
+}
