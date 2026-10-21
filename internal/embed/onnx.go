@@ -41,8 +41,9 @@ func NewONNXEmbedderWithOptions(modelPath, tokenizerPath string, opts ...Option)
 	if err := initRuntime(cfg.libraryPath); err != nil {
 		return nil, fmt.Errorf("%w: %s: %w", ErrONNXRuntimeNotAvailable, cfg.libraryPath, err)
 	}
-	so, err := sessionOptions(cfg.threads)
+	so, err := sessionOptions(cfg)
 	if err != nil {
+		releaseRuntime()
 		return nil, fmt.Errorf("ONNX session options: %w", err)
 	}
 	defer func() { _ = so.Destroy() }()
@@ -50,6 +51,7 @@ func NewONNXEmbedderWithOptions(modelPath, tokenizerPath string, opts ...Option)
 		[]string{"input_ids", "attention_mask", "token_type_ids"},
 		[]string{"last_hidden_state"}, so)
 	if err != nil {
+		releaseRuntime()
 		return nil, fmt.Errorf("create ONNX session: %w", err)
 	}
 	return &ONNXEmbedder{session: session, tokenizer: tok, cfg: cfg}, nil
@@ -128,7 +130,9 @@ func (e *ONNXEmbedder) Close() error {
 	}
 	e.closed = true
 	if e.session != nil {
-		if err := e.session.Destroy(); err != nil {
+		err := e.session.Destroy()
+		releaseRuntime()
+		if err != nil {
 			return fmt.Errorf("destroy ONNX session: %w", err)
 		}
 	}

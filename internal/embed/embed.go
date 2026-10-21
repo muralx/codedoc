@@ -41,6 +41,13 @@ func NewEmbedderWithOptions(modelPath, tokenizerPath string, opts ...Option) (Em
 	return NewONNXEmbedderWithOptions(modelPath, tokenizerPath, opts...)
 }
 
+// DefaultBatchSize is the texts of one inference call. Attention memory
+// grows with the batch times the square of its longest text: embedding
+// 178 passages of 1,200 bytes peaked at 5.1 GB with a batch of 32 and
+// the arena on, 2.2 GB with a batch of 8 and the arena off, in the same
+// 23 seconds; 4 saves nothing more.
+const DefaultBatchSize = 8
+
 // Option configures an ONNXEmbedder.
 type Option func(*onnxConfig)
 
@@ -50,12 +57,16 @@ type onnxConfig struct {
 	dims        int
 	threads     int
 	libraryPath string
+	// arena keeps ONNX Runtime's CPU memory arena and memory patterns:
+	// faster repeated runs, but the peak of the largest batch stays
+	// allocated for the life of the session.
+	arena bool
 }
 
 func defaultConfig() onnxConfig {
 	return onnxConfig{
 		maxLength:   512,
-		batchSize:   32,
+		batchSize:   DefaultBatchSize,
 		dims:        768,
 		threads:     DefaultThreads(),
 		libraryPath: LibraryPath(),
@@ -73,7 +84,7 @@ func WithMaxLength(n int) Option {
 }
 
 // WithBatchSize sets the number of texts processed per ONNX inference call
-// (default 32).
+// (default DefaultBatchSize).
 func WithBatchSize(n int) Option {
 	return func(c *onnxConfig) {
 		if n > 0 {

@@ -7,7 +7,14 @@ import (
 	"os"
 	"path/filepath"
 	"sync"
+	"time"
 )
+
+// IdleUnload is how long a Lazy embedder of Configured keeps its model
+// after the last call. The model takes about 1.5 GB loaded and a second
+// to load again, so a long-lived process (the daemon, an MCP server)
+// holds it only while it is embedding.
+const IdleUnload = 5 * time.Minute
 
 // ErrUnavailable is returned by a Lazy embedder whose model could not be
 // loaded; callers fall back to text search.
@@ -29,18 +36,25 @@ const FakeDims = 64
 const EmbedderEnv = "CODEDOC_EMBEDDER"
 
 // Lazy is an Embedder that loads its backing embedder on first use, so a
-// process that never embeds never pays for loading the model. A failed
+// process that never embeds never pays for loading the model, and with
+// UnloadAfter closes it again when unused. A failed
 // load is reported once to the warning writer; every call then returns
 // ErrUnavailable. It is safe for concurrent use.
 type Lazy struct {
 	dims int
 	open func() (Embedder, error)
 	warn io.Writer
+	// idle, when positive, closes a loaded embedder that no call has used
+	// for that long; the next call loads it again.
+	idle time.Duration
 
 	mu    sync.Mutex
 	tried bool
 	e     Embedder
 	err   error
+	busy  int       // calls using e now
+	last  time.Time // when the last call finished
+	timer *time.Timer
 }
 
 // NewLazy returns a Lazy embedder of dims dimensions that loads with open
@@ -49,39 +63,88 @@ func NewLazy(dims int, open func() (Embedder, error), warn io.Writer) *Lazy {
 	return &Lazy{dims: dims, open: open, warn: warn}
 }
 
-func (l *Lazy) load() (Embedder, error) {
+// UnloadAfter makes l close its loaded embedder once no call has used it
+// for idle, and returns l.
+func (l *Lazy) UnloadAfter(idle time.Duration) *Lazy {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	if l.tried {
-		return l.e, l.err
-	}
-	l.tried = true
-	l.e, l.err = l.open()
-	if l.err != nil {
-		l.e = nil
-		if l.warn != nil {
-			_, _ = fmt.Fprintf(l.warn, "codedoc: embeddings disabled, search is text-only: %v\n", l.err)
+	l.idle = idle
+	return l
+}
+
+// acquire loads the embedder if needed and counts the caller as using
+// it until release.
+func (l *Lazy) acquire() (Embedder, error) {
+	l.mu.Lock()
+	defer l.mu.Unlock()
+	if !l.tried {
+		l.tried = true
+		l.e, l.err = l.open()
+		if l.err != nil {
+			l.e = nil
+			if l.warn != nil {
+				_, _ = fmt.Fprintf(l.warn, "codedoc: embeddings disabled, search is text-only: %v\n", l.err)
+			}
+			l.err = fmt.Errorf("%w: %w", ErrUnavailable, l.err)
 		}
-		l.err = fmt.Errorf("%w: %w", ErrUnavailable, l.err)
 	}
-	return l.e, l.err
+	if l.err != nil {
+		return nil, l.err
+	}
+	l.busy++
+	return l.e, nil
+}
+
+// release ends a call of acquire and, when unloading is on, arms the
+// idle timer.
+func (l *Lazy) release() {
+	l.mu.Lock()
+	defer l.mu.Unlock()
+	l.busy--
+	l.last = time.Now()
+	if l.idle <= 0 {
+		return
+	}
+	if l.timer == nil {
+		l.timer = time.AfterFunc(l.idle, l.unloadIdle)
+	} else {
+		l.timer.Reset(l.idle)
+	}
+}
+
+// unloadIdle closes the embedder when no call is using it and none has
+// finished within the idle time; a later call loads it again.
+func (l *Lazy) unloadIdle() {
+	l.mu.Lock()
+	defer l.mu.Unlock()
+	if l.e == nil || l.busy > 0 {
+		return
+	}
+	if wait := l.idle - time.Since(l.last); wait > 0 {
+		l.timer.Reset(wait)
+		return
+	}
+	_ = l.e.Close()
+	l.e, l.tried = nil, false
 }
 
 // Embed loads the model if needed and embeds text.
 func (l *Lazy) Embed(text string) ([]float32, error) {
-	e, err := l.load()
+	e, err := l.acquire()
 	if err != nil {
 		return nil, err
 	}
+	defer l.release()
 	return e.Embed(text)
 }
 
 // EmbedBatch loads the model if needed and embeds texts in order.
 func (l *Lazy) EmbedBatch(texts []string) ([][]float32, error) {
-	e, err := l.load()
+	e, err := l.acquire()
 	if err != nil {
 		return nil, err
 	}
+	defer l.release()
 	return e.EmbedBatch(texts)
 }
 
@@ -95,12 +158,18 @@ func (l *Lazy) Loaded() bool {
 	return l.e != nil
 }
 
-// Close releases the backing embedder when it was loaded.
+// Close releases the backing embedder when it was loaded and stops the
+// idle timer.
 func (l *Lazy) Close() error {
 	l.mu.Lock()
 	defer l.mu.Unlock()
+	if l.timer != nil {
+		l.timer.Stop()
+	}
 	if l.e != nil {
-		return l.e.Close()
+		err := l.e.Close()
+		l.e, l.tried = nil, false
+		return err
 	}
 	return nil
 }
@@ -134,5 +203,5 @@ func Configured(modelDir string, warn io.Writer) Embedder {
 			}
 		}
 		return NewEmbedder(model, tok)
-	}, warn)
+	}, warn).UnloadAfter(IdleUnload)
 }

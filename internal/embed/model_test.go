@@ -105,3 +105,31 @@ func TestModelPaddingToLongestMatchesFullPadding(t *testing.T) {
 		t.Fatalf("cosine %v to the fully padded vector", worst)
 	}
 }
+
+// TestModelReloadsAfterTheLastClose closes the only embedder, which
+// destroys the ONNX environment, and loads the model again.
+func TestModelReloadsAfterTheLastClose(t *testing.T) {
+	first := modelEmbedder(t)
+	want, err := first.Embed("reload the model")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := first.Close(); err != nil {
+		t.Fatal(err)
+	}
+	runtimeState.mu.Lock()
+	initialized := runtimeState.initialized
+	runtimeState.mu.Unlock()
+	if initialized {
+		t.Fatal("environment still initialized after the last close")
+	}
+	got, err := modelEmbedder(t).Embed("reload the model")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for i := range want {
+		if d := want[i] - got[i]; d > 1e-5 || d < -1e-5 {
+			t.Fatalf("vector differs at %d: %v vs %v", i, want[i], got[i])
+		}
+	}
+}

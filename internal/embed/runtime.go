@@ -31,20 +31,37 @@ func LibraryPath() string {
 var runtimeState struct {
 	mu          sync.Mutex
 	initialized bool
+	users       int // embedders holding the environment
 }
 
 // initRuntime loads the shared library at path and initializes the ONNX
-// Runtime environment, once per process.
+// Runtime environment when no embedder holds it, and counts the caller
+// as holding it until releaseRuntime.
 func initRuntime(path string) error {
 	runtimeState.mu.Lock()
 	defer runtimeState.mu.Unlock()
-	if runtimeState.initialized {
-		return nil
+	if !runtimeState.initialized {
+		ort.SetSharedLibraryPath(path)
+		if err := ort.InitializeEnvironment(); err != nil {
+			return err
+		}
+		runtimeState.initialized = true
 	}
-	ort.SetSharedLibraryPath(path)
-	if err := ort.InitializeEnvironment(); err != nil {
-		return err
-	}
-	runtimeState.initialized = true
+	runtimeState.users++
 	return nil
+}
+
+// releaseRuntime ends a hold of initRuntime. The last one destroys the
+// environment and returns the freed memory to the system: a destroyed
+// session alone leaves about 1.2 GB resident, the environment and
+// glibc's free lists keeping what the model used.
+func releaseRuntime() {
+	runtimeState.mu.Lock()
+	defer runtimeState.mu.Unlock()
+	if runtimeState.users--; runtimeState.users > 0 || !runtimeState.initialized {
+		return
+	}
+	_ = ort.DestroyEnvironment()
+	runtimeState.initialized = false
+	releaseFreed()
 }

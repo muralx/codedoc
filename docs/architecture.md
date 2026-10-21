@@ -283,8 +283,8 @@ while its row exists, so a pass is idempotent and one computed from text
 that changed meanwhile is redone by the next. `codedoc index` embeds the
 workspace; a query's freshness check embeds what it re-extracted only
 when the model is already loaded and the backlog is small; the daemon
-keeps the model loaded and embeds everything it re-extracts, then the
-dependencies.
+embeds everything each batch re-extracted, loading the model when
+needed and unloading it after 5 idle minutes, then the dependencies.
 
 ## Dependencies
 
@@ -375,8 +375,8 @@ unit in `deploy/systemd/`. It:
   roots with fsnotify (debounced 300 ms, at most 2 s after the first
   event) and polls `.git/HEAD` and refs every 2 s for commits and
   branch switches, indexing in rounds of at most 5,000 files;
-- keeps the embedding model loaded and embeds what it re-extracts, then
-  dependency vectors in the background;
+- embeds what each batch re-extracts (the model unloads after 5 idle
+  minutes), then dependency vectors in the background;
 - schedules SCIP runs per repo (`scip.every`; a repo never merged runs
   at start): [`internal/scip`](../internal/scip) runs `scip-go`,
   `scip-typescript`, `scip-python` or `scip-java`, and merges their
@@ -454,6 +454,4 @@ Rules: v1 13.3, efficiency 8 and 9.
 - **Embedding needs ONNX Runtime and the model files**; without them
   search is text only.
 - **Upkeep counts untracked files as a dirty tree** and waits until the
-  tree is clean, and after a very large re-index the daemon may leave
-  new symbols without vectors, so search falls back to keywords for
-  them. Both are tracked in [TODO.md](TODO.md).
+  tree is clean. Tracked in [TODO.md](TODO.md).

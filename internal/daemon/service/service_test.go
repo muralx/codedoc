@@ -11,6 +11,7 @@ import (
 	"github.com/muralx/codedoc/internal/buildinfo"
 	"github.com/muralx/codedoc/internal/config"
 	"github.com/muralx/codedoc/internal/daemon"
+	"github.com/muralx/codedoc/internal/embed"
 )
 
 func TestDaemonFollowsEditsDirectoriesDeletesAndBranches(t *testing.T) {
@@ -45,6 +46,30 @@ func TestDaemonFollowsEditsDirectoriesDeletesAndBranches(t *testing.T) {
 	h.eventually("back on main", waitLimit, func() bool {
 		st := h.repoStatus("go-lib")
 		return st.Branch == "main" && st.Queue == 0 && !strings.Contains(h.find("OnFeature"), "feature.go")
+	})
+}
+
+// TestDaemonEmbedsTheSymbolsOfAnEdit runs the daemon with a model that
+// is not loaded, as in production, and waits on the vectors alone: a
+// query embeds what is pending itself, and a loaded embedder lets the
+// indexing pass embed, so either would hide a daemon that never embeds
+// after the catch-up.
+func TestDaemonEmbedsTheSymbolsOfAnEdit(t *testing.T) {
+	h := newHarness(t, "", "go-lib")
+	opts := h.options()
+	opts.Embedder = embed.NewLazy(embed.FakeDims, func() (embed.Embedder, error) { return embed.NewFake(embed.FakeDims), nil }, nil).
+		UnloadAfter(time.Millisecond)
+	h.start(opts)
+	var before int
+	h.eventually("vectors embedded after the catch-up", waitLimit, func() bool {
+		n, documented := h.vectors("go-lib")
+		before = documented
+		return documented > 0 && n == documented
+	})
+	h.write("go-lib", "store/embedded.go", "package store\n\n// Embedded is new and documented.\nfunc Embedded() {}\n")
+	h.eventually("the edit embedded", waitLimit, func() bool {
+		n, documented := h.vectors("go-lib")
+		return documented > before && n == documented
 	})
 }
 

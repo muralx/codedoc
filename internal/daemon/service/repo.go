@@ -59,8 +59,8 @@ func (sp *space) options() index.Options {
 }
 
 // catchUp brings every repo of the workspace up to date with its working
-// tree, logging its progress, then embeds the vectors still missing,
-// which loads the model once for the daemon's lifetime, and indexes the
+// tree, logging its progress, then embeds the vectors still missing
+// (loading the model, which unloads again when idle), and indexes the
 // dependencies deps.db lacks (see syncDeps). Each repo is marked ready,
 // failed or not, so its changes are handled from then on.
 func (sp *space) catchUp(ctx context.Context) {
@@ -169,6 +169,9 @@ func catchUpNote(f index.Freshness, err error) string {
 // move or a rescan runs a full freshness pass, anything else exactly the
 // paths. A rescan that succeeds clears the repo's degraded state. Work
 // cut short by the end of ctx is not an error: the next pass finishes it.
+// The batch's vectors are embedded right after: the indexing pass embeds
+// only with a model already loaded, which a daemon's model is not before
+// its first embedding or after an idle unload.
 // The repo's dependencies are synced after every batch (see syncDeps):
 // a changed source file may import a package for the first time, or be
 // the last to stop importing one.
@@ -198,6 +201,9 @@ func (r *repo) apply(ctx context.Context, c daemon.Change) {
 	}
 	r.sp.svc.log.Printf("%s: indexed %d path(s)%s in %s", r.label(), len(c.Paths), headNote(c),
 		time.Since(start).Round(time.Millisecond))
+	if r.sp.svc.embedder != nil {
+		_ = r.safely("embed", r.embed)
+	}
 	_ = r.safely("deps", func() error { return r.syncDeps(ctx, false) })
 }
 

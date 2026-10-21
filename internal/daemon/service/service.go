@@ -50,6 +50,8 @@ type Options struct {
 	ClaudeBin string
 	// AutodocMinutes bounds one scheduled autodoc run; default 30.
 	AutodocMinutes int
+	// Embedder replaces the embedder of the config's model directory.
+	Embedder embed.Embedder
 }
 
 // Service is a daemon over the configured workspaces. New claims the
@@ -84,7 +86,10 @@ func New(opts Options) (*Service, error) {
 		return nil, errors.Join(err, unlock())
 	}
 	s := &Service{opts: opts, log: opts.Log, ln: ln, unlock: unlock}
-	s.embedder = embed.Configured(opts.Config.Embed.ModelDir, logWriter{opts.Log})
+	s.embedder = opts.Embedder
+	if s.embedder == nil {
+		s.embedder = embed.Configured(opts.Config.Embed.ModelDir, logWriter{opts.Log})
+	}
 	return s, nil
 }
 

@@ -23,5 +23,23 @@ Environment=PATH=%h/.local/bin:%h/go/bin:/usr/local/bin:/usr/bin:/bin
 # Another config file:
 #Environment=CODEDOC_CONFIG=%h/.config/codedoc/config.yaml
 
+# Background work only: the daemon and what it starts (SCIP indexers,
+# claude runs) get CPU and disk only when foreground work leaves them idle.
+Nice=19
+CPUSchedulingPolicy=idle
+CPUWeight=idle
+IOSchedulingClass=idle
+# Memory: embedding a whole repository for the first time peaks at 3-5 GB
+# (an incremental update at about 1.3 GB, released after 5 idle minutes).
+# Above MemoryHigh the kernel reclaims and slows the daemon instead of
+# pushing the desktop into swap; MemoryMax is the hard stop; the daemon is
+# the first process the OOM killer picks.
+MemoryHigh=3G
+MemoryMax=6G
+MemorySwapMax=512M
+OOMScoreAdjust=500
+# Fewer malloc arenas: the embedder's threads otherwise keep a heap each.
+Environment=MALLOC_ARENA_MAX=2
+
 [Install]
 WantedBy=default.target

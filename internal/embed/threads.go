@@ -39,14 +39,28 @@ func WithThreads(n int) Option {
 	}
 }
 
+// WithArena keeps ONNX Runtime's CPU memory arena and memory patterns
+// (default off: each run frees what it allocated).
+func WithArena(on bool) Option {
+	return func(c *onnxConfig) { c.arena = on }
+}
+
 // sessionOptions returns the ONNX Runtime options of a session that
-// computes with threads threads; the caller destroys them.
-func sessionOptions(threads int) (*ort.SessionOptions, error) {
+// computes with cfg.threads threads and keeps the arena only when
+// cfg.arena; the caller destroys them.
+func sessionOptions(cfg onnxConfig) (*ort.SessionOptions, error) {
 	opts, err := ort.NewSessionOptions()
 	if err != nil {
 		return nil, err
 	}
-	if err := opts.SetIntraOpNumThreads(threads); err != nil {
+	err = opts.SetIntraOpNumThreads(cfg.threads)
+	if err == nil {
+		err = opts.SetCpuMemArena(cfg.arena)
+	}
+	if err == nil {
+		err = opts.SetMemPattern(cfg.arena)
+	}
+	if err != nil {
 		_ = opts.Destroy()
 		return nil, err
 	}

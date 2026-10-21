@@ -20,8 +20,9 @@ exits 0. It does the following:
   Large batches are indexed in rounds of up to 5,000 files.
 - **Branch switches.** Polls `.git/HEAD` and refs every 2 s; a branch
   switch or new commit triggers a full freshness pass.
-- **Embeddings.** Keeps the embedding model loaded, so vectors follow
-  every edit.
+- **Embeddings.** Embeds what every batch re-extracted, loading the
+  model when needed and unloading it after 5 idle minutes, so vectors
+  follow every edit.
 - **Socket.** Serves status and freshness: `codedoc status` adds the
   queue, the next SCIP and autodoc runs, the upkeep state and the last
   error per repo.
@@ -80,6 +81,23 @@ The unit runs `%h/go/bin/codedoc daemon`; edit `ExecStart` if codedoc
 lives elsewhere. Its `PATH` includes `~/.local/bin` so scheduled autodoc
 and upkeep find `claude`. Uncomment `CODEDOC_MODEL_DIR` or `CODEDOC_CONFIG` as
 needed. `TimeoutStopSec=30` gives the daemon time to finish a round.
+
+The unit keeps the daemon out of the way of foreground work. It and
+everything it starts (SCIP indexers, `claude` runs) run at idle CPU and
+I/O priority (`CPUSchedulingPolicy=idle`, `CPUWeight=idle`,
+`IOSchedulingClass=idle`, `Nice=19`), so they only use cores and disk
+nothing else wants. Memory is bounded: embedding a whole repository for
+the first time peaks at 3 to 5 GB, an incremental update at about
+1.3 GB. Above `MemoryHigh=3G` the kernel slows the daemon rather than
+the desktop; `MemoryMax=6G` and `MemorySwapMax=512M` are hard limits,
+and `OOMScoreAdjust=500` makes it the first process the OOM killer
+picks. Lower the limits on a small machine: a full embed then takes
+longer but still completes.
+
+The embedding model takes about 1.3 GB once loaded. A long-lived process
+(the daemon, an MCP server) loads it on the first embedding and unloads
+it after 5 minutes without one; the next embedding loads it again in
+about a second.
 
 ## Documentation upkeep
 

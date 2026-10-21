@@ -2,11 +2,6 @@
 
 ## Known issues
 
-- **New symbols are not embedded after a large re-index.** When a merge
-  re-indexes many files at once, the daemon extracts the new symbols but
-  does not embed them; `codedoc status` then shows fewer vectors than
-  symbols (`vectors:463/640`), and search falls back to keywords for the
-  rest.
 - **Upkeep counts untracked files as a dirty tree.** A single untracked
   file or directory in the working tree stops every upkeep run, and
   `codedoc status` only says `upkeep:on (uncommitted changes)`.

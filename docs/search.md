@@ -90,6 +90,11 @@ One model call uses half the logical CPUs, at most 12 threads: past 12
 a thread adds heat, not speed. `CODEDOC_EMBED_THREADS` sets another
 number.
 
+One call embeds 8 texts. Attention memory grows with the batch times
+the square of its longest text. On 178 passages of 1,200 bytes, 32 texts
+a call with ONNX Runtime's memory arena kept peaked at 5.1 GB and kept
+it allocated; 8 with the arena off peak at 2.2 GB, in the same time.
+
 Vectors are float32 BLOBs in the workspace database, scored by a linear
 scan. If the model or the library is missing, codedoc says so once on
 stderr and carries on text-only.
@@ -102,4 +107,4 @@ Queries keep vectors current only in small steps:
   Otherwise its note names the backlog.
 
 So after large changes, run `codedoc index` or keep the daemon running;
-the daemon holds the model loaded.
+the daemon embeds everything each batch re-extracted.
